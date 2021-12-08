@@ -6,7 +6,7 @@
   <link href="https://jglicat.github.io/atom.xml" rel="self"/>
   
   <link href="https://jglicat.github.io/"/>
-  <updated>2021-12-08T18:36:53.402Z</updated>
+  <updated>2021-12-08T19:30:19.465Z</updated>
   <id>https://jglicat.github.io/</id>
   
   <author>
@@ -17,44 +17,50 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="https://jglicat.github.io/2021/12/09/test/"/>
-    <id>https://jglicat.github.io/2021/12/09/test/</id>
-    <published>2021-12-08T18:36:20.000Z</published>
-    <updated>2021-12-08T18:36:53.402Z</updated>
+    <title>linux设置后台任务</title>
+    <link href="https://jglicat.github.io/2021/12/09/linux-she-zhi-hou-tai-ren-wu/"/>
+    <id>https://jglicat.github.io/2021/12/09/linux-she-zhi-hou-tai-ren-wu/</id>
+    <published>2021-12-08T19:29:25.000Z</published>
+    <updated>2021-12-08T19:30:19.465Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;This is a</summary>
+    <summary type="html">&lt;h1 id=&quot;设置后台任务（以scp为例）&quot;&gt;&lt;a href=&quot;#设置后台任务（以scp为例）&quot; class=&quot;headerlink&quot; title=&quot;设置后台任务（以scp为例）&quot;&gt;&lt;/a&gt;设置后台任务（以scp为例）&lt;/h1&gt;&lt;h2 id=&quot;正常执行命令&quot;&gt;&lt;a</summary>
         
       
     
     
     
+    
+    <category term="Linux" scheme="https://jglicat.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://jglicat.github.io/2021/12/09/hello-world/"/>
-    <id>https://jglicat.github.io/2021/12/09/hello-world/</id>
-    <published>2021-12-08T17:30:35.952Z</published>
-    <updated>2021-12-08T17:30:35.952Z</updated>
+    <title>ssh相关问题</title>
+    <link href="https://jglicat.github.io/2021/12/09/ssh-xiang-guan-wen-ti/"/>
+    <id>https://jglicat.github.io/2021/12/09/ssh-xiang-guan-wen-ti/</id>
+    <published>2021-12-08T19:24:44.000Z</published>
+    <updated>2021-12-08T19:28:20.617Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;配置别名&quot;&gt;&lt;a href=&quot;#配置别名&quot; class=&quot;headerlink&quot; title=&quot;配置别名&quot;&gt;&lt;/a&gt;配置别名&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-shell&quot;</summary>
         
       
     
     
     
+    
+    <category term="Linux" scheme="https://jglicat.github.io/tags/Linux/"/>
+    
+    <category term="ssh" scheme="https://jglicat.github.io/tags/ssh/"/>
     
   </entry>
   

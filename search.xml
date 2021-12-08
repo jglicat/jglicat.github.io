@@ -4,26 +4,40 @@
   
     
     <entry>
-      <title>test</title>
-      <link href="/2021/12/09/test/"/>
-      <url>/2021/12/09/test/</url>
+      <title>linux设置后台任务</title>
+      <link href="/2021/12/09/linux-she-zhi-hou-tai-ren-wu/"/>
+      <url>/2021/12/09/linux-she-zhi-hou-tai-ren-wu/</url>
       
-        <content type="html"><![CDATA[<p>This is a test.</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="设置后台任务（以scp为例）"><a href="#设置后台任务（以scp为例）" class="headerlink" title="设置后台任务（以scp为例）"></a>设置后台任务（以scp为例）</h1><h2 id="正常执行命令"><a href="#正常执行命令" class="headerlink" title="正常执行命令"></a>正常执行命令</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@oradb30 ~]# scp -r /u01/media/Disk1/ 192.168.1.31:/u01/media/reverse mapping checking getaddrinfo for bogon failed - POSSIBLE BREAK-IN ATTEMPT!root@192.168.1.31's password: ...filegroup2.jar                                                                                                                                              100%   84KB  83.8KB/s   00:00    filegroup9.jar       <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="暂停"><a href="#暂停" class="headerlink" title="暂停"></a>暂停</h2><p>输入ctrl + z 暂停</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[1]+  Stopped                 scp -r /u01/media/Disk1/ 192.168.1.31:/u01/media/[root@oradb30 ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>此时查看jobs：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@oradb30 ~]# jobs[1]+  Stopped                 scp -r /u01/media/Disk1/ 192.168.1.31:/u01/media/[root@oradb30 ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="bg将其放入后台"><a href="#bg将其放入后台" class="headerlink" title="bg将其放入后台"></a>bg将其放入后台</h2><p>bg将该任务号放入后台:</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@oradb30 media]# bg %1[1]+ scp -r Disk1/ 192.168.1.31:/u01/media/ &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>查看任务已经在后台运行:</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@oradb30 media]# jobs[1]+  Running                 scp -r Disk1/ 192.168.1.31:/u01/media/ &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="disown-h-将这个作业忽略HUP信号"><a href="#disown-h-将这个作业忽略HUP信号" class="headerlink" title="disown -h 将这个作业忽略HUP信号"></a>disown -h 将这个作业忽略HUP信号</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@oradb30 media]# disown -h %1[root@oradb30 media]# jobs[1]+  Running                 scp -r Disk1/ 192.168.1.31:/u01/media/ &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>查看任务运行状态和父进程号:</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@oradb30 media]# ps -ef|grep scproot     12704 12638  0 05:19 pts/0    00:00:01 scp -r Disk1  192.168.1.31 /u01/media/root     12705 12704  8 05:19 pts/0    00:00:17 /usr/bin/ssh -x -oForwardAgent no -oPermitLocalCommand no -oClearAllForwardings yes 192.168.1.31 scp -r -t /u01/media/root     12823 12638  0 05:22 pts/0    00:00:00 grep scp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2021/12/09/hello-world/"/>
-      <url>/2021/12/09/hello-world/</url>
+      <title>ssh相关问题</title>
+      <link href="/2021/12/09/ssh-xiang-guan-wen-ti/"/>
+      <url>/2021/12/09/ssh-xiang-guan-wen-ti/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo vim ~/.ssh/configHost 别名名称    HostName IP或者域名    Port 端口    User 用户名    IdentitiesOnly yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="配置免密登录"><a href="#配置免密登录" class="headerlink" title="配置免密登录"></a>配置免密登录</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 先在客户端生成密钥对（一路回车就行）ssh-keygen# 上传公钥到服务器ssh-copy-id -i ~/.ssh/id_rsa.pub 用户名@IP# 如果已配置别名，也可以ssh-copy-id -i ~/.ssh/id_rsa.pub 别名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> ssh </tag>
+            
+        </tags>
       
     </entry>
     
