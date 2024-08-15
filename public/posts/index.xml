@@ -1,0 +1,126 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>所有文章 - My New Hugo Site</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>所有文章 | My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 17 Jul 2024 20:51:49 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Test</title>
+  <link>http://localhost:1313/posts/test/</link>
+  <pubDate>Wed, 17 Jul 2024 20:51:49 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/test/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>My First Post</title>
+  <link>http://localhost:1313/posts/my-first-post/</link>
+  <pubDate>Wed, 17 Jul 2024 20:33:39 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/my-first-post/</guid>
+  <description><![CDATA[this is a test]]></description>
+</item>
+<item>
+  <title>windows命令行美化</title>
+  <link>http://localhost:1313/posts/windows%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BE%8E%E5%8C%96/</link>
+  <pubDate>Thu, 09 Dec 2021 15:22:39 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/windows%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BE%8E%E5%8C%96/</guid>
+  <description><![CDATA[颜值即正义
+众所周知windows自带的cmd和powershell又丑又难用，所以需要改进一下
+软件安装 Windows Terminal Windows Terminal是微软推出的命令行工具，还是很好用的，推荐用Store安装，比较省心。
+Powershell win10/11自带的还是Powershell 5，略老，目前最新的版本是7.2，下载安装即可，建议msi文件安装。安装完成后会自动整合进Windows Terminal。
+美化配置 下载字体 首先得整点支持Nerd-fonts的字体，用来在终端下显示各种图标，比如Fira Code Nerd Font。
+安装Powershell插件 # 1. 安装 PSReadline 包，该插件可以让命令行很好用，类似 zsh Install-Module -Name PSReadLine -Scope CurrentUser # 2. 安装 posh-git 包，让你的 git 更好用 Install-Module posh-git -Scope CurrentUser # 如果之前安装过，需要先卸载 Uninstall-Module oh-my-posh -AllVersions # 3. 安装 oh-my-posh 包，让你的命令行更酷炫、优雅 # Install-Module oh-my-posh -Scope CurrentUser winget install oh-my-posh配置 Windows Terminal 在json文件里更改
+{ &#34;acrylicOpacity&#34;: 0.5, &#34;closeOnExit&#34;: &#34;graceful&#34;, &#34;colorScheme&#34;: &#34;Homebrew&#34;, &#34;commandline&#34;: &#34;C:/Program Files/PowerShell/7/pwsh.]]></description>
+</item>
+<item>
+  <title>linux设置后台任务</title>
+  <link>http://localhost:1313/posts/linux%E8%AE%BE%E7%BD%AE%E5%90%8E%E5%8F%B0%E4%BB%BB%E5%8A%A1/</link>
+  <pubDate>Thu, 09 Dec 2021 03:29:25 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/linux%E8%AE%BE%E7%BD%AE%E5%90%8E%E5%8F%B0%E4%BB%BB%E5%8A%A1/</guid>
+  <description><![CDATA[设置后台任务（以scp为例） 正常执行命令 [root@oradb30 ~]# scp -r /u01/media/Disk1/ 192.168.1.31:/u01/media/ reverse mapping checking getaddrinfo for bogon failed - POSSIBLE BREAK-IN ATTEMPT! root@192.168.1.31&#39;s password: ... filegroup2.jar 100% 84KB 83.8KB/s 00:00 filegroup9.jar 暂停 输入ctrl + z 暂停
+[1]+ Stopped scp -r /u01/media/Disk1/ 192.168.1.31:/u01/media/ [root@oradb30 ~]# 此时查看jobs：
+[root@oradb30 ~]# jobs [1]+ Stopped scp -r /u01/media/Disk1/ 192.168.1.31:/u01/media/ [root@oradb30 ~]# bg将其放入后台 bg将该任务号放入后台:
+[root@oradb30 media]# bg %1 [1]+ scp -r Disk1/ 192.168.1.31:/u01/media/ &amp;查看任务已经在后台运行:
+[root@oradb30 media]# jobs [1]+ Running scp -r Disk1/ 192.]]></description>
+</item>
+<item>
+  <title>ssh相关问题</title>
+  <link>http://localhost:1313/posts/ssh%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
+  <pubDate>Thu, 09 Dec 2021 03:24:44 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/ssh%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</guid>
+  <description><![CDATA[配置别名 sudo vim ~/.ssh/config Host 别名名称 HostName IP或者域名 Port 端口 User 用户名 IdentitiesOnly yes登录安全性 配置免密登录 # 先在客户端生成密钥对（一路回车就行） ssh-keygen # 上传公钥到服务器 ssh-copy-id -i ~/.ssh/id_rsa.pub 用户名@IP # 如果已配置别名，也可以 ssh-copy-id -i ~/.ssh/id_rsa.pub 别名秘钥登录 添加公钥 首先将私钥~/.ssh/id_rsa保存下来
+https://wangdoc.com/ssh/key.html
+OpenSSH 自带一个ssh-copy-id命令，可以自动将公钥拷贝到远程服务器的~/.ssh/authorized_keys文件。如果~/.ssh/authorized_keys文件不存在，ssh-copy-id命令会自动创建该文件
+ssh-copy-id -i key_file user@host上面命令中，-i参数用来指定公钥文件，user是所要登录的账户名，host是服务器地址。如果省略用户名，默认为当前的本机用户名。执行完该命令，公钥就会拷贝到服务器。
+注意，公钥文件可以不指定路径和.pub后缀名，ssh-copy-id会自动在~/.ssh目录里面寻找。
+# 将公钥添加到authorized_keys文件末尾 ssh-copy-id -i id_rsa user@localhost上面命令中，公钥文件会自动匹配到~/.ssh/id_rsa.pub。
+ssh-copy-id会采用密码登录，系统会提示输入远程服务器的密码。
+注意，ssh-copy-id是直接将公钥添加到authorized_keys文件的末尾。如果authorized_keys文件的末尾不是一个换行符，会导致新的公钥添加到前一个公钥的末尾，两个公钥连在一起，使得它们都无法生效。所以，如果authorized_keys文件已经存在，使用ssh-copy-id命令之前，务必保证authorized_keys文件的末尾是换行符（假设该文件已经存在）。
+关闭密码登录 sudo vim /etc/ssh/sshd_config # 添加 DenyUsers root@127.0.0.1 Match User root PasswordAuthentication yes Match all PasswordAuthentication no # 重启ssh服务 sudo systemctl restart sshroot用户可以用密码登录，其他用户必须采用秘钥登录，同时禁止root在本地登录（frp跳转后实际上是本地登录）]]></description>
+</item>
+<item>
+  <title></title>
+  <link>http://localhost:1313/posts/cygwin/</link>
+  <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/cygwin/</guid>
+  <description><![CDATA[Cygwin配置 下载安装 Cygwin
+windows terminal配置 # 生成guid new-guid添加配置文件，此处需要注意的一点是，Cygwin 中的 Bash 需要以交互式登录 shell（interactive login shell）的形式启动，否则的话，在运行一些包括 ls 在内的基本指令的时候会出 “command not found” 的消息。这个的原因是只有登录 shell 会在启动的时候运行 /etc/profile，然后 Cygwin 中的 /etc/profile 会把 /usr/bin 和 /usr/local/bin 加到 PATH 环境变量当中。如果开启的不是登录 shell，那么 /etc/profile 不会被运行，环境变量也就不会被设置。启动交互式登录 shell 的方法是使用 -i -l 选项。如果您想使用别的 shell，那么请自行确认下让 /usr/bin 和 /usr/local/bin 被添加到 PATH 下的方法。
+{ &#34;guid&#34;: &#34;{38397ce3-6a93-4a63-be64-30bf0b270469}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;cygwin64&#34;, &#34;commandline&#34;: &#34;C:\\path\\cygwin64\\bin\\bash.exe -i -l&#34;, &#34;icon&#34;: &#34;C:/path/cygwin64/Cygwin-Terminal.ico&#34; }参考链接 在 Windows Terminal 中使用 Cygwin 命令行或 Git Bash - Leo3418 的个人网站]]></description>
+</item>
+<item>
+  <title></title>
+  <link>http://localhost:1313/posts/fiddler-everywhere%E7%A0%B4%E8%A7%A3/</link>
+  <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/fiddler-everywhere%E7%A0%B4%E8%A7%A3/</guid>
+  <description><![CDATA[Fiddler Everything破解 3.2版本测试有效
+前言 Fiddler Everywhere 是一款跨平台的抓包软件。
+它由 Electron + dotNet 编写而成。
+于是破解需要修改 Electron 与 dotNet 两部分。
+破解 修改 Electron 的js代码 进入\resources\app\out\WebServer\ClientApp\dist
+打开 main.xxxx.js 搜索 updateUserLicense ，在函数内部开头加入：
+xe.licenseInfo.currentLicense = &#34;Pro&#34; xe.licenseInfo.hasExpiredTrial = false xe.licenseInfo.isTrialAvailable = false xe.licenseInfo.hasValidLicense = true修改dotNet的代码 进入C:\Users\SwordSong\AppData\Local\Programs\Fiddler Everywhere\resources\app\out\WebServer
+使用 ildasm 将 FiddlerBackendSDK.dll转成 il
+定位到 FiddlerBackendSDK.User.UserClient::GetBestAccount
+删除 IL_000d – IL_0020 对应 if 语句
+删除 IL_003f – IL_0040 对应 return null; 语句
+定位到 &lt;&gt;c__DisplayClass18_0′::’b__0
+删除 IL_0000 – IL_0019 , 在 IL_001e 前插入 ldc.]]></description>
+</item>
+<item>
+  <title></title>
+  <link>http://localhost:1313/posts/hs8145v5/</link>
+  <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/hs8145v5/</guid>
+  <description><![CDATA[运营商界面 华为界面互相转换方法 注意： 1、首先要补全shell。 2、只能是光猫原来的运营商界面和华为界面之间互相转换（联通界面和华为界面、移动界面和华为界面、电信界面和华为界面的互相转换）。 3、联通、移动、电信、华为界面之间自由转换需要将其它运营商的数据上传到光猫。
+运营商界面转换到华为界面 telnet 192.168.1.1 root adminHW su shell cp -f /mnt/jffs2/hw_ctree.xml /mnt/jffs2/hw_ctree_bak.xml （备份运营商hw_ctree文件） cp -f /mnt/jffs2/hw_boardinfo /mnt/jffs2/hw_boardinfo_bak （ 备份运营商hw_boardinfo文件） cp -f /etc/wap/hw_default_ctree.xml /mnt/jffs2/hw_ctree.xml （ 拷贝华为原厂hw_ctree文件） sed -i &#39;s/^.*obj.id = &#34;0x0000001a&#34; ; obj.value =.*$/obj.id = &#34;0x0000001a&#34; ; obj.value = &#34;COMMON&#34;;/&#39; /mnt/jffs2/hw_boardinfo sed -i &#39;s/^.*obj.id = &#34;0x0000001b&#34; ; obj.value =.*$/obj.id = &#34;0x0000001b&#34; ; obj.value = &#34;COMMON&#34;;/&#39; /mnt/jffs2/hw_boardinfo sed -i &#39;s/^.*obj.id = &#34;0x00000031&#34; ; obj.value =.*$/obj.id = &#34;0x00000031&#34; ; obj.]]></description>
+</item>
+<item>
+  <title></title>
+  <link>http://localhost:1313/posts/ipv6%E7%9B%B8%E5%85%B3/</link>
+  <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/ipv6%E7%9B%B8%E5%85%B3/</guid>
+  <description><![CDATA[参考链接：设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 - 学长の生活志 (65.chat)
+设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 和强君 • 2021 年 03 月 12 日 • 阅读: 11873 • 记录 教程开始之前，先思考两个问题： 没有公网怎么办？ 解答：目前移动、联通、电信这三家运营商，以云南地区为例，三家都已经实现 百分之百 IPV6 公网，电信有 ipv4 公网，联通部分有 ipv4 公网，移动没有 ipv4 公网。
+如何查看自己有没有公网请自行百度。
+确定有公网，但是只能内网访问。 解答：把光猫改成桥接模式，进行路由器拨号，修改方式记住自己光猫相关参数，按照下图进行修改（记得替换相关值）。
+image.png 教程正式开始 路由器拨号上网 准备一个已经刷好 openwrt 的软路由，以 K3 为例，按照下图方式连接光猫的 LAN 与路由器的 WAN 即可，如果有多级可继续以相同方式进行串联。 image.png 启动路由器，输入 192.168.2.1（一级路由）登陆管理界面，依次网络 —— 接口 ——WAN—— 修改（如图所示） image.png 协议选择 PPPOE ，之后填入宽带账号密码，其他默认不用修改即可完成设置上网。 image.png 路由器开启 IPV6 如果有 IPV4 公网那直接申请域名做动态域名解析和端口转发即可。
+openwort 设置 ipv6 比较繁琐 需要先按照下图配置方式完成设置。
+在接口处根据需求选择已有接口或者新建接口，删除 IPV6 前缀 保存。 image.]]></description>
+</item>
+<item>
+  <title></title>
+  <link>http://localhost:1313/posts/linux/</link>
+  <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>http://localhost:1313/posts/linux/</guid>
+  <description><![CDATA[Linux常用命令 linux 添加用户 # 默认 sudo adduser jiange su jiange ssh-keygen cd ~/.ssh cat id_rsa.pub &gt;&gt; authorized_keys sudo adduser jiange docker sudo adduser jiange sudo # 需要更改用户目录时 sudo useradd -d /data/home/guest -m -s /usr/bin/bash guest sudo passwd guest sudo chown -R guset:guest /data/home/guest批量杀进程 ps -ef | grep &#39;python main_with_runtime.py --module&#39; | grep -v grep | awk &#39;{print $2}&#39; | xargs kill -9wsl 设置ssh # 在windows上查找wsl的ip wsl ip a |wsl grep -w &#34;inet&#34; |wsl cut -d &#34; &#34; -f 6 |wsl cut -d &#34;/&#34; -f 1 # 删除之前的转发 netsh interface portproxy delete v4tov4 listenaddress=192.]]></description>
+</item>
+</channel>
+</rss>

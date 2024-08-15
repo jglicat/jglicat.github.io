@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title> - My New Hugo Site</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="Linux常用命令 linux 添加用户 # 默认 sudo adduser jiange su jiange ssh-keygen cd ~/.ssh cat id_rsa.pub &gt;&gt; authorized_keys sudo adduser jiange docker sudo adduser jiange sudo # 需要更改用户目录时 sudo useradd -d /data/home/guest -m -s /usr/bin/bash guest sudo passwd guest sudo chown -R guset:guest /data/home/guest批量杀进程 ps -ef | grep &#39;python main_with_runtime.py --module&#39; | grep -v grep | awk &#39;{print $2}&#39; | xargs kill -9wsl 设置ssh # 在windows上查找wsl的ip wsl ip a |wsl grep -w &#34;inet&#34; |wsl cut -d &#34; &#34; -f 6 |wsl cut -d &#34;/&#34; -f 1 # 删除之前的转发 netsh interface portproxy delete v4tov4 listenaddress=192." />
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="Linux常用命令 linux 添加用户 # 默认 sudo adduser jiange su jiange ssh-keygen cd ~/.ssh cat id_rsa.pub &gt;&gt; authorized_keys sudo adduser jiange docker sudo adduser jiange sudo # 需要更改用户目录时 sudo useradd -d /data/home/guest -m -s /usr/bin/bash guest sudo passwd guest sudo chown -R guset:guest /data/home/guest批量杀进程 ps -ef | grep &#39;python main_with_runtime.py --module&#39; | grep -v grep | awk &#39;{print $2}&#39; | xargs kill -9wsl 设置ssh # 在windows上查找wsl的ip wsl ip a |wsl grep -w &#34;inet&#34; |wsl cut -d &#34; &#34; -f 6 |wsl cut -d &#34;/&#34; -f 1 # 删除之前的转发 netsh interface portproxy delete v4tov4 listenaddress=192.">
+  <meta itemprop="wordCount" content="928"><meta property="og:url" content="http://localhost:1313/posts/linux/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="Linux常用命令 linux 添加用户 # 默认 sudo adduser jiange su jiange ssh-keygen cd ~/.ssh cat id_rsa.pub &gt;&gt; authorized_keys sudo adduser jiange docker sudo adduser jiange sudo # 需要更改用户目录时 sudo useradd -d /data/home/guest -m -s /usr/bin/bash guest sudo passwd guest sudo chown -R guset:guest /data/home/guest批量杀进程 ps -ef | grep &#39;python main_with_runtime.py --module&#39; | grep -v grep | awk &#39;{print $2}&#39; | xargs kill -9wsl 设置ssh # 在windows上查找wsl的ip wsl ip a |wsl grep -w &#34;inet&#34; |wsl cut -d &#34; &#34; -f 6 |wsl cut -d &#34;/&#34; -f 1 # 删除之前的转发 netsh interface portproxy delete v4tov4 listenaddress=192.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My New Hugo Site">
+  <meta name="twitter:description" content="Linux常用命令 linux 添加用户 # 默认 sudo adduser jiange su jiange ssh-keygen cd ~/.ssh cat id_rsa.pub &gt;&gt; authorized_keys sudo adduser jiange docker sudo adduser jiange sudo # 需要更改用户目录时 sudo useradd -d /data/home/guest -m -s /usr/bin/bash guest sudo passwd guest sudo chown -R guset:guest /data/home/guest批量杀进程 ps -ef | grep &#39;python main_with_runtime.py --module&#39; | grep -v grep | awk &#39;{print $2}&#39; | xargs kill -9wsl 设置ssh # 在windows上查找wsl的ip wsl ip a |wsl grep -w &#34;inet&#34; |wsl cut -d &#34; &#34; -f 6 |wsl cut -d &#34;/&#34; -f 1 # 删除之前的转发 netsh interface portproxy delete v4tov4 listenaddress=192.">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/linux/" /><link rel="prev" href="http://localhost:1313/posts/linux%E5%A4%9A%E6%9C%BA%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" /><link rel="next" href="http://localhost:1313/posts/ipv6%E7%9B%B8%E5%85%B3/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "",
+    "inLanguage": "en-us",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/posts\/linux\/"
+    },"genre": "posts","wordcount":  928 ,
+    "url": "http:\/\/localhost:1313\/posts\/linux\/","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span></span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span></div><div class="post-meta-line"><span title="发布于 0001-01-01 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="0001-01-01">0001-01-01</time></span>&nbsp;<span title="928 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 5 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux">linux</a>
+      <ul>
+        <li><a href="#添加用户">添加用户</a></li>
+        <li><a href="#批量杀进程">批量杀进程</a></li>
+      </ul>
+    </li>
+    <li><a href="#wsl">wsl</a>
+      <ul>
+        <li><a href="#设置ssh">设置ssh</a></li>
+        <li><a href="#设置代理">设置代理</a></li>
+        <li><a href="#更换清华源更新报错">更换清华源更新报错</a></li>
+      </ul>
+    </li>
+    <li><a href="#git">git</a>
+      <ul>
+        <li><a href="#代理相关">代理相关</a></li>
+        <li><a href="#更改默认编辑器">更改默认编辑器</a></li>
+        <li><a href="#秘钥">秘钥</a></li>
+      </ul>
+    </li>
+    <li><a href="#nginx">nginx</a></li>
+    <li><a href="#docker">docker</a>
+      <ul>
+        <li><a href="#停止删除容器">停止删除容器</a></li>
+        <li><a href="#文件互传">文件互传</a></li>
+        <li><a href="#端口映射ssh登录">端口映射ssh登录</a></li>
+        <li><a href="#权限管理">权限管理</a></li>
+      </ul>
+    </li>
+    <li><a href="#ssh">ssh</a>
+      <ul>
+        <li><a href="#白名单设置">白名单设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#mysql">mysql</a>
+      <ul>
+        <li><a href="#开启远程访问">开启远程访问</a></li>
+        <li><a href="#甲骨文云关闭防火墙">甲骨文云关闭防火墙</a></li>
+      </ul>
+    </li>
+    <li><a href="#dns-修改">dns 修改</a></li>
+    <li><a href="#查看系统配置">查看系统配置</a></li>
+    <li><a href="#网络相关">网络相关</a>
+      <ul>
+        <li><a href="#内网测速">内网测速</a></li>
+      </ul>
+    </li>
+    <li><a href="#pip">pip</a></li>
+    <li><a href="#gcc多版本共存">gcc多版本共存</a></li>
+    <li><a href="#cuda安装">cuda安装</a></li>
+    <li><a href="#挂载硬盘">挂载硬盘</a></li>
+    <li><a href="#conda">conda</a>
+      <ul>
+        <li><a href="#设置conda代理">设置conda代理</a></li>
+      </ul>
+    </li>
+    <li><a href="#升级ubuntu">升级Ubuntu</a>
+      <ul>
+        <li><a href="#合盖不休眠">合盖不休眠</a></li>
+        <li><a href="#关闭休眠">关闭休眠</a></li>
+        <li><a href="#自动启动">自动启动</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="linux常用命令" class="heading-element"><span>Linux常用命令</span>
+  <a href="#linux%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h2 id="linux" class="heading-element"><span>linux</span>
+  <a href="#linux" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="添加用户" class="heading-element"><span>添加用户</span>
+  <a href="#%e6%b7%bb%e5%8a%a0%e7%94%a8%e6%88%b7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 默认</span>
+</span></span><span style="display:flex;"><span>sudo adduser jiange
+</span></span><span style="display:flex;"><span>su jiange
+</span></span><span style="display:flex;"><span>ssh-keygen
+</span></span><span style="display:flex;"><span>cd ~/.ssh
+</span></span><span style="display:flex;"><span>cat id_rsa.pub &gt;&gt; authorized_keys
+</span></span><span style="display:flex;"><span>sudo adduser jiange docker 
+</span></span><span style="display:flex;"><span>sudo adduser jiange sudo 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 需要更改用户目录时</span>
+</span></span><span style="display:flex;"><span>sudo useradd -d /data/home/guest -m -s /usr/bin/bash guest
+</span></span><span style="display:flex;"><span>sudo passwd guest
+</span></span><span style="display:flex;"><span>sudo chown -R guset:guest /data/home/guest</span></span></code></pre></div><h3 id="批量杀进程" class="heading-element"><span>批量杀进程</span>
+  <a href="#%e6%89%b9%e9%87%8f%e6%9d%80%e8%bf%9b%e7%a8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ps -ef | grep <span style="color:#e6db74">&#39;python main_with_runtime.py --module&#39;</span> | grep -v grep | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span> | xargs kill -9</span></span></code></pre></div><h2 id="wsl" class="heading-element"><span>wsl</span>
+  <a href="#wsl" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="设置ssh" class="heading-element"><span>设置ssh</span>
+  <a href="#%e8%ae%be%e7%bd%aessh" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 在windows上查找wsl的ip</span>
+</span></span><span style="display:flex;"><span>wsl ip a |wsl grep -w <span style="color:#e6db74">&#34;inet&#34;</span> |wsl cut -d <span style="color:#e6db74">&#34; &#34;</span> -f <span style="color:#ae81ff">6</span> |wsl cut -d <span style="color:#e6db74">&#34;/&#34;</span> -f <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 删除之前的转发</span>
+</span></span><span style="display:flex;"><span>netsh interface portproxy delete v4tov4 listenaddress<span style="color:#f92672">=</span>192.168.2.238  listenport<span style="color:#f92672">=</span><span style="color:#ae81ff">2222</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加新的转发</span>
+</span></span><span style="display:flex;"><span>netsh interface portproxy add v4tov4 listenport<span style="color:#f92672">=</span><span style="color:#ae81ff">2222</span> listenaddress<span style="color:#f92672">=</span>192.168.2.238 connectport<span style="color:#f92672">=</span><span style="color:#ae81ff">2222</span> connectaddress<span style="color:#f92672">=</span>172.24.105.130
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在wsl里重启ssh</span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart sshd 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 测试</span>
+</span></span><span style="display:flex;"><span>ssh -p <span style="color:#ae81ff">2222</span> jiange@192.168.2.238</span></span></code></pre></div><h3 id="设置代理" class="heading-element"><span>设置代理</span>
+  <a href="#%e8%ae%be%e7%bd%ae%e4%bb%a3%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 这句话是防止中文乱码的</span>
+</span></span><span style="display:flex;"><span>export LC_ALL<span style="color:#f92672">=</span>C
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这些是代理</span>
+</span></span><span style="display:flex;"><span>export windows_host<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>cat /etc/resolv.conf|grep nameserver|awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span>$windows_host<span style="color:#e6db74">:10811&#34;</span>
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span>$windows_host<span style="color:#e6db74">:10811&#34;</span>
+</span></span><span style="display:flex;"><span>export ALL_PROXY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;socks5://</span>$windows_host<span style="color:#e6db74">:10810&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;`git config --global --get http.proxy`&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;socks5://</span>$windows_host<span style="color:#e6db74">:10810&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>                     git config --global http.proxy socks5://$windows_host:10810
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">fi</span></span></span></code></pre></div><h3 id="更换清华源更新报错" class="heading-element"><span>更换清华源更新报错</span>
+  <a href="#%e6%9b%b4%e6%8d%a2%e6%b8%85%e5%8d%8e%e6%ba%90%e6%9b%b4%e6%96%b0%e6%8a%a5%e9%94%99" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>换回默认源，然后装一些关于https的包</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install apt-transport-https
+</span></span><span style="display:flex;"><span>sudo apt install ca-certificates</span></span></code></pre></div><h2 id="git" class="heading-element"><span>git</span>
+  <a href="#git" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="代理相关" class="heading-element"><span>代理相关</span>
+  <a href="#%e4%bb%a3%e7%90%86%e7%9b%b8%e5%85%b3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 id="设置git代理" class="heading-element"><span>设置git代理</span>
+  <a href="#%e8%ae%be%e7%bd%aegit%e4%bb%a3%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#http || https</span>
+</span></span><span style="display:flex;"><span>git config --global http.proxy 127.0.0.1:10809
+</span></span><span style="display:flex;"><span>git config --global https.proxy 127.0.0.1:10809
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sock5代理</span>
+</span></span><span style="display:flex;"><span>git config --global http.proxy socks5 127.0.0.1:10808
+</span></span><span style="display:flex;"><span>git config --global http.proxy socks5 127.0.0.1:10808</span></span></code></pre></div><h4 id="查看代理" class="heading-element"><span>查看代理</span>
+  <a href="#%e6%9f%a5%e7%9c%8b%e4%bb%a3%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git config --global --get http.proxy
+</span></span><span style="display:flex;"><span>git config --global --get https.proxy</span></span></code></pre></div><h4 id="取消代理" class="heading-element"><span>取消代理</span>
+  <a href="#%e5%8f%96%e6%b6%88%e4%bb%a3%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git config --global --unset http.proxy
+</span></span><span style="display:flex;"><span>git config --global --unset https.proxy</span></span></code></pre></div><h3 id="更改默认编辑器" class="heading-element"><span>更改默认编辑器</span>
+  <a href="#%e6%9b%b4%e6%94%b9%e9%bb%98%e8%ae%a4%e7%bc%96%e8%be%91%e5%99%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git config --global core.editor vim</span></span></code></pre></div><h3 id="秘钥" class="heading-element"><span>秘钥</span>
+  <a href="#%e7%a7%98%e9%92%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;Name&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;Email&#34;</span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;Email&#34;</span> 
+</span></span><span style="display:flex;"><span>clip &lt; ~/.ssh/id_rsa.pub</span></span></code></pre></div><h2 id="nginx" class="heading-element"><span>nginx</span>
+  <a href="#nginx" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo vim /etc/nginx/sites-enabled/default
+</span></span><span style="display:flex;"><span>sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+</span></span><span style="display:flex;"><span>sudo systemctl reload nginx
+</span></span><span style="display:flex;"><span>sudo systemctl restart nginx
+</span></span><span style="display:flex;"><span>sudo systemctl status nginx
+</span></span><span style="display:flex;"><span>lsof -i:443
+</span></span><span style="display:flex;"><span>curl localhost:80</span></span></code></pre></div><h2 id="docker" class="heading-element"><span>docker</span>
+  <a href="#docker" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="停止删除容器" class="heading-element"><span>停止删除容器</span>
+  <a href="#%e5%81%9c%e6%ad%a2%e5%88%a0%e9%99%a4%e5%ae%b9%e5%99%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 停止所有容器</span>
+</span></span><span style="display:flex;"><span>docker stop <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停不了就删</span>
+</span></span><span style="display:flex;"><span>docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 删除所有none的镜像</span>
+</span></span><span style="display:flex;"><span>docker rmi <span style="color:#66d9ef">$(</span>docker images | grep <span style="color:#e6db74">&#34;none&#34;</span> | awk <span style="color:#e6db74">&#39;{print $3}&#39;</span><span style="color:#66d9ef">)</span> </span></span></code></pre></div><h3 id="文件互传" class="heading-element"><span>文件互传</span>
+  <a href="#%e6%96%87%e4%bb%b6%e4%ba%92%e4%bc%a0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 获取容器id或name</span>
+</span></span><span style="display:flex;"><span>docker ps -a
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 获取全称</span>
+</span></span><span style="display:flex;"><span>docker inspect -f <span style="color:#e6db74">&#39;{{.Id}}&#39;</span> name
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 传输文件</span>
+</span></span><span style="display:flex;"><span>docker cp 本地 Id全称:容器路径
+</span></span><span style="display:flex;"><span>docker cp Id全称:容器路径 本地</span></span></code></pre></div><h3 id="端口映射ssh登录" class="heading-element"><span>端口映射ssh登录</span>
+  <a href="#%e7%ab%af%e5%8f%a3%e6%98%a0%e5%b0%84ssh%e7%99%bb%e5%bd%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nvidia-docker run -p 5592:5592 -p 5593:5593 -p 8022:22 -it --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh_pipetorch&#34;</span> -v /data:/data --ipc<span style="color:#f92672">=</span>host  pipetorch /bin/bash
+</span></span><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>apt install -yopenssh-server
+</span></span><span style="display:flex;"><span>passwd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vim /etc/ssh/sshd_config
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将PermitRootLogin的值从withoutPassword改为yes</span>
+</span></span><span style="display:flex;"><span>service ssh restart
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ctrl+p+q退出</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 测试</span>
+</span></span><span style="display:flex;"><span>ssh root@localhost -p <span style="color:#ae81ff">8022</span></span></span></code></pre></div><h3 id="权限管理" class="heading-element"><span>权限管理</span>
+  <a href="#%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 添加docker用户组</span>
+</span></span><span style="display:flex;"><span>sudo groupadd docker 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 把当前用户加入docker用户组</span>
+</span></span><span style="display:flex;"><span>sudo gpasswd -a <span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span> docker
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看是否添加成功</span>
+</span></span><span style="display:flex;"><span>cat /etc/group | grep ^docker
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启docker</span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart docker
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新用户组</span>
+</span></span><span style="display:flex;"><span>newgrp docker 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 测试docker命令是否可以正常使用</span>
+</span></span><span style="display:flex;"><span>docker ps</span></span></code></pre></div><h2 id="ssh" class="heading-element"><span>ssh</span>
+  <a href="#ssh" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="白名单设置" class="heading-element"><span>白名单设置</span>
+  <a href="#%e7%99%bd%e5%90%8d%e5%8d%95%e8%ae%be%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo vim /etc/hosts.allow
+</span></span><span style="display:flex;"><span>sshd:192.168.1.18:allow
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#允许192.168.1.18通过SSH登录</span>
+</span></span><span style="display:flex;"><span>sshd:192.168.1.0/24:allow
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#允许192.168.1.0网段通过SSH登录</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#或者改动这个文件，一般不同时改动</span>
+</span></span><span style="display:flex;"><span>sudo vim /etc/hosts.deny
+</span></span><span style="display:flex;"><span>sshd:192.168.1.18:allow
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#允许192.168.1.18通过SSH登录</span>
+</span></span><span style="display:flex;"><span>sshd:192.168.1.0/24:allow
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#允许192.168.1.0通过SSH登录</span>
+</span></span><span style="display:flex;"><span>sshd:ALL
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ALL表示除了上面设置的IP。其他全部拒绝SSH登录</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart ssh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#查看登录列表</span>
+</span></span><span style="display:flex;"><span>who /var/log/wtmp</span></span></code></pre></div><h2 id="mysql" class="heading-element"><span>mysql</span>
+  <a href="#mysql" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="开启远程访问" class="heading-element"><span>开启远程访问</span>
+  <a href="#%e5%bc%80%e5%90%af%e8%bf%9c%e7%a8%8b%e8%ae%bf%e9%97%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 查看默认密码</span>
+</span></span><span style="display:flex;"><span>sudo cat /etc/mysql/debian.cnf </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 将其中的localhost改为0.0.0.0或者注释</span>
+</span></span><span style="display:flex;"><span>sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span>sudo mysql <span style="color:#f92672">-</span>uroot <span style="color:#f92672">-</span>p
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> mysql;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> <span style="color:#66d9ef">IDENTIFIED</span> <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;your_pwd&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> <span style="color:#66d9ef">IDENTIFIED</span> <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;your_pwd&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FLUSH</span> <span style="color:#66d9ef">PRIVILEGES</span>; </span></span></code></pre></div><h3 id="甲骨文云关闭防火墙" class="heading-element"><span>甲骨文云关闭防火墙</span>
+  <a href="#%e7%94%b2%e9%aa%a8%e6%96%87%e4%ba%91%e5%85%b3%e9%97%ad%e9%98%b2%e7%81%ab%e5%a2%99" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#停止firewall</span>
+</span></span><span style="display:flex;"><span>systemctl stop firewalld.service
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#禁止firewall开机启动</span>
+</span></span><span style="display:flex;"><span>systemctl disable firewalld.service
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#关闭iptables</span>
+</span></span><span style="display:flex;"><span>service iptables stop
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#去掉iptables开机启动</span>
+</span></span><span style="display:flex;"><span>chkconfig iptables off
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#开放所有端口</span>
+</span></span><span style="display:flex;"><span>sudo iptables -P INPUT ACCEPT
+</span></span><span style="display:flex;"><span>sudo iptables -P FORWARD ACCEPT
+</span></span><span style="display:flex;"><span>sudo iptables -P OUTPUT ACCEPT
+</span></span><span style="display:flex;"><span>sudo iptables -F
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</span>
+</span></span><span style="display:flex;"><span>apt-get purge netfilter-persistent
+</span></span><span style="display:flex;"><span>reboot
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#强制删除</span>
+</span></span><span style="display:flex;"><span>rm -rf /etc/iptables <span style="color:#f92672">&amp;&amp;</span> reboot
+</span></span><span style="display:flex;"><span>除此之外如果创建了安全组还需要自行放行安全组</span></span></code></pre></div><h2 id="dns-修改" class="heading-element"><span>dns 修改</span>
+  <a href="#dns-%e4%bf%ae%e6%94%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim /etc/resolvconf/resolv.conf.d/base  
+</span></span><span style="display:flex;"><span>sudo systemd-resolve --statistics 16以下   
+</span></span><span style="display:flex;"><span>sudo systemd-resolve --flush-caches 17以上   </span></span></code></pre></div><h2 id="查看系统配置" class="heading-element"><span>查看系统配置</span>
+  <a href="#%e6%9f%a5%e7%9c%8b%e7%b3%bb%e7%bb%9f%e9%85%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># sudo apt install screenfetch</span>
+</span></span><span style="display:flex;"><span>sudo apt install neofetch 
+</span></span><span style="display:flex;"><span>sudo apt install inxi -Fxz
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -F 参数意味着你将得到完整的输出，x 增加细节信息，z 参数隐藏像 MAC 和 IP 等私人身份信息</span>
+</span></span><span style="display:flex;"><span>inxi -Fxz</span></span></code></pre></div><h2 id="网络相关" class="heading-element"><span>网络相关</span>
+  <a href="#%e7%bd%91%e7%bb%9c%e7%9b%b8%e5%85%b3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="内网测速" class="heading-element"><span>内网测速</span>
+  <a href="#%e5%86%85%e7%bd%91%e6%b5%8b%e9%80%9f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install iperf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 服务端</span>
+</span></span><span style="display:flex;"><span>iperf -s
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 客户端</span>
+</span></span><span style="display:flex;"><span>iperf -c ipadress</span></span></code></pre></div><h2 id="pip" class="heading-element"><span>pip</span>
+  <a href="#pip" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>在 <code>C:\Users\$USER$\pip</code>或者 <code>~/</code>文件夹下新建pip.ini</p>
+<p>ubuntu:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir ~/.pip/
+</span></span><span style="display:flex;"><span>sudo vim ~/.pip/pip.conf</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>global<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>index-url <span style="color:#f92672">=</span> http://mirrors.aliyun.com/pypi/simple/
+</span></span><span style="display:flex;"><span>proxy     <span style="color:#f92672">=</span> https://127.0.0.1:10809
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>install<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>trusted-host <span style="color:#f92672">=</span> mirrors.aliyun.com</span></span></code></pre></div><h2 id="gcc多版本共存" class="heading-element"><span>gcc多版本共存</span>
+  <a href="#gcc%e5%a4%9a%e7%89%88%e6%9c%ac%e5%85%b1%e5%ad%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><a href="https://blog.csdn.net/ggggyj/article/details/117691948"target="_blank" rel="external nofollow noopener noreferrer">参考链接</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 默认装的是高版本，现在想装低版本</span>
+</span></span><span style="display:flex;"><span>sudo apt install gcc-7 g++-7
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 下面的命令配置每一个版本，并且设置了优先级。默认的版本是拥有最高优先级的那个，在我们的场景中是gcc-7</span>
+</span></span><span style="display:flex;"><span>sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 <span style="color:#ae81ff">90</span> --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
+</span></span><span style="display:flex;"><span>sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 <span style="color:#ae81ff">70</span> --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果你想修改默认的版本，使用update-alternatives命令</span>
+</span></span><span style="display:flex;"><span>sudo update-alternatives --config gcc</span></span></code></pre></div><h2 id="cuda安装" class="heading-element"><span>cuda安装</span>
+  <a href="#cuda%e5%ae%89%e8%a3%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><code>报错256</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 卸载 NVIDIA 驱动:</span>
+</span></span><span style="display:flex;"><span>sudo apt-get --purge remove <span style="color:#e6db74">&#34;*nvidia*&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 卸载 cuda:</span>
+</span></span><span style="display:flex;"><span>cd /usr/local/cuda/bin
+</span></span><span style="display:flex;"><span>./cuda-uninstaller</span></span></code></pre></div><h2 id="挂载硬盘" class="heading-element"><span>挂载硬盘</span>
+  <a href="#%e6%8c%82%e8%bd%bd%e7%a1%ac%e7%9b%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 查看容量</span>
+</span></span><span style="display:flex;"><span>df -h
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看系统中连接的硬盘</span>
+</span></span><span style="display:flex;"><span>sudo fdisk -l
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果没有格式化就格式化</span>
+</span></span><span style="display:flex;"><span>sudo mkfs -t ext4 /dev/sda1
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 挂载到/data</span>
+</span></span><span style="display:flex;"><span>sudo mkdir /data
+</span></span><span style="display:flex;"><span>sudo mount /dev/sda1 /data</span></span></code></pre></div><h2 id="conda" class="heading-element"><span>conda</span>
+  <a href="#conda" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="设置conda代理" class="heading-element"><span>设置conda代理</span>
+  <a href="#%e8%ae%be%e7%bd%aeconda%e4%bb%a3%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim ~/.condarc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>channels:
+</span></span><span style="display:flex;"><span>  - defaults
+</span></span><span style="display:flex;"><span>show_channel_urls: true
+</span></span><span style="display:flex;"><span>proxy_servers:
+</span></span><span style="display:flex;"><span>  http: http://127.0.0.1:10809
+</span></span><span style="display:flex;"><span>  https: http://127.0.0.1:10809
+</span></span><span style="display:flex;"><span>default_channels:
+</span></span><span style="display:flex;"><span>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+</span></span><span style="display:flex;"><span>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+</span></span><span style="display:flex;"><span>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+</span></span><span style="display:flex;"><span>custom_channels:
+</span></span><span style="display:flex;"><span>  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span style="display:flex;"><span>  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span style="display:flex;"><span>  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span style="display:flex;"><span>  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span style="display:flex;"><span>  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span style="display:flex;"><span>  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span style="display:flex;"><span>  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span></span></code></pre></div><h2 id="升级ubuntu" class="heading-element"><span>升级Ubuntu</span>
+  <a href="#%e5%8d%87%e7%ba%a7ubuntu" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>升级系统相关软件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt upgrade -y
+</span></span><span style="display:flex;"><span>sudo apt dist-upgrade -y
+</span></span><span style="display:flex;"><span>sudo apt autoclean
+</span></span><span style="display:flex;"><span>sudo apt autoremove -y</span></span></code></pre></div><p>升级内核</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install update-manager-core
+</span></span><span style="display:flex;"><span>sudo <span style="color:#66d9ef">do</span>-release-upgrade -d</span></span></code></pre></div><p>参考：<a href="https://www.bandwagonhost.net/12638.html"target="_blank" rel="external nofollow noopener noreferrer">https://www.bandwagonhost.net/12638.html</a></p>
+<h3 id="合盖不休眠" class="heading-element"><span>合盖不休眠</span>
+  <a href="#%e5%90%88%e7%9b%96%e4%b8%8d%e4%bc%91%e7%9c%a0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo /etc/systemd/logind.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加</span>
+</span></span><span style="display:flex;"><span>HandleLidSwitch<span style="color:#f92672">=</span>ignore
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo service systemd-logind restart</span></span></code></pre></div><h3 id="关闭休眠" class="heading-element"><span>关闭休眠</span>
+  <a href="#%e5%85%b3%e9%97%ad%e4%bc%91%e7%9c%a0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo systemctl status sleep.target
+</span></span><span style="display:flex;"><span>sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target</span></span></code></pre></div><h3 id="自动启动" class="heading-element"><span>自动启动</span>
+  <a href="#%e8%87%aa%e5%8a%a8%e5%90%af%e5%8a%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>sudo vim /usr/lib/systemd/system/frp.service</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">frpc</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Wants</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Restart</span><span style="color:#f92672">=</span><span style="color:#e6db74">on-failure</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">RestartSec</span><span style="color:#f92672">=</span><span style="color:#e6db74">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/home/jiange/Downloads/frp/frps -c /home/jiange/Downloads/frp/frps.ini</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span></span></span></code></pre></div><h1 id="扩容" class="heading-element"><span>扩容</span>
+  <a href="#%e6%89%a9%e5%ae%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><ol start="2">
+<li>用fdisk创建新分区
+指创建物理上的分区(Partition)
+需要管理员权限，因为我是root操作，所以所有的提权命令都省略了。如果权限不够就sudo一下</li>
+</ol>
+<p>fdisk /dev/sda
+进入fdisk后，command输入n，代表要新建分区
+按下4，回车，再跳过两个默认的选项，最后键入w回车保存。这样，新的分区4就创建好了。</p>
+<p>Command (m for help): n
+Partition number (4-128, default 4): 4
+First sector (20969472-41943006, default 20969472):
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (20969472-41943006, default 41943006):</p>
+<p>Created a new partition 4 of type &lsquo;Linux filesystem&rsquo; and of size 60 GiB.</p>
+<p>Command (m for help): w
+The partition table has been altered.
+Syncing disks.
+3. 用pvcreat创建物理卷
+意为，在分区上标记：这个分区是空闲的</p>
+<p>pvcreate /dev/sda4
+运行结束后，可以用pvscan查看一下物理卷的情况：</p>
+<p>PV /dev/sda3   VG ubuntu-vg       lvm2 [&lt;19.00 GiB / 0    free]
+PV /dev/sda4                      lvm2 [60.00 GiB]
+Total: 2 [&lt;79.00 GiB] / in use: 1 [&lt;19.00 GiB] / in no VG: 1 [60.00 GiB]
+可以看到，/dev/sda3 在卷组ubuntu-vg里，而 /dev/sda4 不在。</p>
+<ol start="4">
+<li>用vgextend把新物理卷添加到卷组
+先前有描述错误，由Wing0v0和scchen9966指出。先前的描述为：</li>
+</ol>
+<p>vgextend ubuntu=-vf /dev/sda4
+应当是：</p>
+<p>vgextend ubuntu-vg /dev/sda4
+5. 用lvextend给逻辑卷扩容
+查看一下磁盘叫啥</p>
+<p>df -h
+找到Mounted on是\的磁盘，比如，我这是：</p>
+<p>/dev/mapper/ubuntu—vg-ubuntu—lv
+就运行命令扩容：</p>
+<p>lvextend -l +100%FREE /dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv
+6. 用resize2fs让逻辑卷的扩容生效
+如果不执行该命令，扩容不会生效！</p>
+<p>resize2fs /dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv
+好了，磁盘就扩展好了！用df -h看看：</p>
+<p>Filesystem                         Size  &hellip;
+&hellip;
+/dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv   79G  &hellip;
+&hellip;
+OK，扩容完成！尽管造吧！啊哈哈哈哈哈！</p>
+<p>此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))
+Ciallo～(∠・ω&lt; )⌒☆​
+写文不易，如果你觉得我的文章对你有帮助，欢迎打赏！</p>
+<p>hy-v 虚拟机会自动分配端口，每次打开都不一样，有一台好就是恰好端口没有占用到。
+临时解决方法：
+cmd -&gt; netsh winsock reset
+就是重置网络适配器，让后端口再次随机分配。如果恰好不占用就好了。
+勉强算是永久的方法：
+netsh int ipv4 set dynamicport tcp start=50000 num=10000
+netsh int ipv4 set dynamicport udp start=50000 num=10000
+netsh int ipv6 set dynamicport tcp start=50000 num=10000
+netsh int ipv6 set dynamicport udp start=50000 num=10000</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 0001-01-01 00:00:00">更新于 0001-01-01&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="http://localhost:1313/posts/linux/" data-title=""><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/linux/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/linux/" data-title=""><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/linux%E5%A4%9A%E6%9C%BA%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" class="post-nav-item" rel="prev" title=""><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i></a>
+      <a href="/posts/ipv6%E7%9B%B8%E5%85%B3/" class="post-nav-item" rel="next" title=""><i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.128.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.8"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.8"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

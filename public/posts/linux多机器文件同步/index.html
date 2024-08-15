@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title> - My New Hugo Site</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="有多台机器又要重复配置是一项很不优雅的操作，理应由软件帮我们完成
+rsync&#43;inotify https://www.jianshu.com/p/fc2f3ec661c0
+https://segmentfault.com/a/1190000002427568
+比较老的解决方案，缺点就是文件过多时目录文件太大 ，后期一个小更新都要传递10MB&#43;的目录文件，资源浪费
+lsyncd https://www.cnblogs.com/shione/p/10775649.html
+先配置ssh免密登录
+# 先在客户端生成密钥对（一路回车就行） ssh-keygen # 上传公钥到服务器 ssh-copy-id -i ~/.ssh/id_rsa.pub 用户名@IP # 此处为ssh-copy-id -i ~/.ssh/id_rsa.pub jiange@172.22.4.11 # 如果已配置别名，也可以 ssh-copy-id -i ~/.ssh/id_rsa.pub 别名 # 但是我们的服务是在root下运行的，所以需要复制一份 sudo cp ~/.ssh/id_rsa.pub /root/.ssh/id_rsa.pub # 测试 sudo su ssh jiange@172.22.4.11安装然后新建配置文件
+sudo apt install lsyncd # 创建日志目录 sudo mkdir /var/log/lsyncd # 这是ubuntu的配置文件,centos的似乎在/etc/lsyncd.conf sudo mkdir /etc/lsyncd sudo vim /etc/lsyncd/lsyncd.conf.lua写入配置文件，注意default.rsyncssh只能单线程
+settings { logfile = &#34;/var/log/lsyncd/lsyncd.log&#34;, statusFile = &#34;/tmp/lsyncd.stat&#34;, statusInterval = 1, maxProcesses = 1 } servers = {&#34;jiange@172." />
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="有多台机器又要重复配置是一项很不优雅的操作，理应由软件帮我们完成
+rsync&#43;inotify https://www.jianshu.com/p/fc2f3ec661c0
+https://segmentfault.com/a/1190000002427568
+比较老的解决方案，缺点就是文件过多时目录文件太大 ，后期一个小更新都要传递10MB&#43;的目录文件，资源浪费
+lsyncd https://www.cnblogs.com/shione/p/10775649.html
+先配置ssh免密登录
+# 先在客户端生成密钥对（一路回车就行） ssh-keygen # 上传公钥到服务器 ssh-copy-id -i ~/.ssh/id_rsa.pub 用户名@IP # 此处为ssh-copy-id -i ~/.ssh/id_rsa.pub jiange@172.22.4.11 # 如果已配置别名，也可以 ssh-copy-id -i ~/.ssh/id_rsa.pub 别名 # 但是我们的服务是在root下运行的，所以需要复制一份 sudo cp ~/.ssh/id_rsa.pub /root/.ssh/id_rsa.pub # 测试 sudo su ssh jiange@172.22.4.11安装然后新建配置文件
+sudo apt install lsyncd # 创建日志目录 sudo mkdir /var/log/lsyncd # 这是ubuntu的配置文件,centos的似乎在/etc/lsyncd.conf sudo mkdir /etc/lsyncd sudo vim /etc/lsyncd/lsyncd.conf.lua写入配置文件，注意default.rsyncssh只能单线程
+settings { logfile = &#34;/var/log/lsyncd/lsyncd.log&#34;, statusFile = &#34;/tmp/lsyncd.stat&#34;, statusInterval = 1, maxProcesses = 1 } servers = {&#34;jiange@172.">
+  <meta itemprop="wordCount" content="170"><meta property="og:url" content="http://localhost:1313/posts/linux%E5%A4%9A%E6%9C%BA%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="有多台机器又要重复配置是一项很不优雅的操作，理应由软件帮我们完成
+rsync&#43;inotify https://www.jianshu.com/p/fc2f3ec661c0
+https://segmentfault.com/a/1190000002427568
+比较老的解决方案，缺点就是文件过多时目录文件太大 ，后期一个小更新都要传递10MB&#43;的目录文件，资源浪费
+lsyncd https://www.cnblogs.com/shione/p/10775649.html
+先配置ssh免密登录
+# 先在客户端生成密钥对（一路回车就行） ssh-keygen # 上传公钥到服务器 ssh-copy-id -i ~/.ssh/id_rsa.pub 用户名@IP # 此处为ssh-copy-id -i ~/.ssh/id_rsa.pub jiange@172.22.4.11 # 如果已配置别名，也可以 ssh-copy-id -i ~/.ssh/id_rsa.pub 别名 # 但是我们的服务是在root下运行的，所以需要复制一份 sudo cp ~/.ssh/id_rsa.pub /root/.ssh/id_rsa.pub # 测试 sudo su ssh jiange@172.22.4.11安装然后新建配置文件
+sudo apt install lsyncd # 创建日志目录 sudo mkdir /var/log/lsyncd # 这是ubuntu的配置文件,centos的似乎在/etc/lsyncd.conf sudo mkdir /etc/lsyncd sudo vim /etc/lsyncd/lsyncd.conf.lua写入配置文件，注意default.rsyncssh只能单线程
+settings { logfile = &#34;/var/log/lsyncd/lsyncd.log&#34;, statusFile = &#34;/tmp/lsyncd.stat&#34;, statusInterval = 1, maxProcesses = 1 } servers = {&#34;jiange@172.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My New Hugo Site">
+  <meta name="twitter:description" content="有多台机器又要重复配置是一项很不优雅的操作，理应由软件帮我们完成
+rsync&#43;inotify https://www.jianshu.com/p/fc2f3ec661c0
+https://segmentfault.com/a/1190000002427568
+比较老的解决方案，缺点就是文件过多时目录文件太大 ，后期一个小更新都要传递10MB&#43;的目录文件，资源浪费
+lsyncd https://www.cnblogs.com/shione/p/10775649.html
+先配置ssh免密登录
+# 先在客户端生成密钥对（一路回车就行） ssh-keygen # 上传公钥到服务器 ssh-copy-id -i ~/.ssh/id_rsa.pub 用户名@IP # 此处为ssh-copy-id -i ~/.ssh/id_rsa.pub jiange@172.22.4.11 # 如果已配置别名，也可以 ssh-copy-id -i ~/.ssh/id_rsa.pub 别名 # 但是我们的服务是在root下运行的，所以需要复制一份 sudo cp ~/.ssh/id_rsa.pub /root/.ssh/id_rsa.pub # 测试 sudo su ssh jiange@172.22.4.11安装然后新建配置文件
+sudo apt install lsyncd # 创建日志目录 sudo mkdir /var/log/lsyncd # 这是ubuntu的配置文件,centos的似乎在/etc/lsyncd.conf sudo mkdir /etc/lsyncd sudo vim /etc/lsyncd/lsyncd.conf.lua写入配置文件，注意default.rsyncssh只能单线程
+settings { logfile = &#34;/var/log/lsyncd/lsyncd.log&#34;, statusFile = &#34;/tmp/lsyncd.stat&#34;, statusInterval = 1, maxProcesses = 1 } servers = {&#34;jiange@172.">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/linux%E5%A4%9A%E6%9C%BA%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" /><link rel="prev" href="http://localhost:1313/posts/onedrive/" /><link rel="next" href="http://localhost:1313/posts/linux/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "",
+    "inLanguage": "en-us",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/posts\/linux%E5%A4%9A%E6%9C%BA%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5\/"
+    },"genre": "posts","wordcount":  170 ,
+    "url": "http:\/\/localhost:1313\/posts\/linux%E5%A4%9A%E6%9C%BA%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5\/","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span></span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span></div><div class="post-meta-line"><span title="发布于 0001-01-01 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="0001-01-01">0001-01-01</time></span>&nbsp;<span title="170 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#rsyncinotify">rsync+inotify</a></li>
+    <li><a href="#lsyncd">lsyncd</a></li>
+    <li><a href="#文件数量问题">文件数量问题</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>有多台机器又要重复配置是一项很不优雅的操作，理应由软件帮我们完成</p>
+<h2 id="rsyncinotify" class="heading-element"><span>rsync+inotify</span>
+  <a href="#rsyncinotify" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><a href="https://www.jianshu.com/p/fc2f3ec661c0"target="_blank" rel="external nofollow noopener noreferrer">https://www.jianshu.com/p/fc2f3ec661c0</a></p>
+<p><a href="https://segmentfault.com/a/1190000002427568"target="_blank" rel="external nofollow noopener noreferrer">https://segmentfault.com/a/1190000002427568</a></p>
+<p>比较老的解决方案，缺点就是文件过多时目录文件太大 ，后期一个小更新都要传递10MB+的目录文件，资源浪费</p>
+<h2 id="lsyncd" class="heading-element"><span>lsyncd</span>
+  <a href="#lsyncd" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><a href="https://www.cnblogs.com/shione/p/10775649.html"target="_blank" rel="external nofollow noopener noreferrer">https://www.cnblogs.com/shione/p/10775649.html</a></p>
+<p>先配置ssh免密登录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 先在客户端生成密钥对（一路回车就行）</span>
+</span></span><span style="display:flex;"><span>ssh-keygen
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上传公钥到服务器</span>
+</span></span><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_rsa.pub 用户名@IP
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 此处为ssh-copy-id -i ~/.ssh/id_rsa.pub jiange@172.22.4.11</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果已配置别名，也可以</span>
+</span></span><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_rsa.pub 别名
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 但是我们的服务是在root下运行的，所以需要复制一份</span>
+</span></span><span style="display:flex;"><span>sudo cp ~/.ssh/id_rsa.pub /root/.ssh/id_rsa.pub
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 测试</span>
+</span></span><span style="display:flex;"><span>sudo su
+</span></span><span style="display:flex;"><span>ssh jiange@172.22.4.11</span></span></code></pre></div><p>安装然后新建配置文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install lsyncd
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建日志目录</span>
+</span></span><span style="display:flex;"><span>sudo mkdir /var/log/lsyncd
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这是ubuntu的配置文件,centos的似乎在/etc/lsyncd.conf</span>
+</span></span><span style="display:flex;"><span>sudo mkdir /etc/lsyncd
+</span></span><span style="display:flex;"><span>sudo vim /etc/lsyncd/lsyncd.conf.lua</span></span></code></pre></div><p>写入配置文件，注意default.rsyncssh只能单线程</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>settings {
+</span></span><span style="display:flex;"><span>    logfile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/var/log/lsyncd/lsyncd.log&#34;</span>,
+</span></span><span style="display:flex;"><span>    statusFile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/tmp/lsyncd.stat&#34;</span>,
+</span></span><span style="display:flex;"><span>    statusInterval <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    maxProcesses <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>servers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;jiange@172.22.4.12&#34;</span>, <span style="color:#e6db74">&#34;jiange@172.22.4.13&#34;</span>, <span style="color:#e6db74">&#34;jiange@172.22.4.207&#34;</span>, <span style="color:#e6db74">&#34;jiange@172.22.4.208&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> _, server <span style="color:#66d9ef">in</span> ipairs(servers) <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    sync {
+</span></span><span style="display:flex;"><span>        default.rsyncssh,
+</span></span><span style="display:flex;"><span>        source <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/data/sync&#34;</span>,
+</span></span><span style="display:flex;"><span>        host <span style="color:#f92672">=</span> server,
+</span></span><span style="display:flex;"><span>        targetdir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/data/sync&#34;</span>,
+</span></span><span style="display:flex;"><span>        delete <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">-- excludeFrom=&#34;/etc/lsyncd-excludes.txt&#34;,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">-- maxDelays = 5,</span>
+</span></span><span style="display:flex;"><span>        delay <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>        rsync <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            binary <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/usr/bin/rsync&#34;</span>,
+</span></span><span style="display:flex;"><span>            compress <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>            archive <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>            verbose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        ssh <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            port <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span></span></span></code></pre></div><p>然后启动</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo systemctl start lsyncd</span></span></code></pre></div><h2 id="文件数量问题" class="heading-element"><span>文件数量问题</span>
+  <a href="#%e6%96%87%e4%bb%b6%e6%95%b0%e9%87%8f%e9%97%ae%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><code>Lsyncd fails with Out of inotify Watches Error</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo systemctl stop lsyncd.service
+</span></span><span style="display:flex;"><span>sudo sysctl fs.inotify.max_user_watches<span style="color:#f92672">=</span><span style="color:#ae81ff">4000000</span>
+</span></span><span style="display:flex;"><span>sudo systemctl start lsyncd.service
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 永久生效</span>
+</span></span><span style="display:flex;"><span>sudo sysctl -w fs.inotify.max_user_watches<span style="color:#f92672">=</span><span style="color:#ae81ff">4000000</span> | tee -a /etc/sysctl.conf <span style="color:#f92672">&amp;&amp;</span> sysctl -p</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 0001-01-01 00:00:00">更新于 0001-01-01&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="http://localhost:1313/posts/linux%E5%A4%9A%E6%9C%BA%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" data-title=""><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/linux%E5%A4%9A%E6%9C%BA%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/linux%E5%A4%9A%E6%9C%BA%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" data-title=""><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/onedrive/" class="post-nav-item" rel="prev" title=""><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i></a>
+      <a href="/posts/linux/" class="post-nav-item" rel="next" title=""><i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.128.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.8"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.8"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
