@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en-us">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title> - My New Hugo Site</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="Fiddler Everything破解 3.2版本测试有效
+前言 Fiddler Everywhere 是一款跨平台的抓包软件。
+它由 Electron &#43; dotNet 编写而成。
+于是破解需要修改 Electron 与 dotNet 两部分。
+破解 修改 Electron 的js代码 进入\resources\app\out\WebServer\ClientApp\dist
+打开 main.xxxx.js 搜索 updateUserLicense ，在函数内部开头加入：
+xe.licenseInfo.currentLicense = &#34;Pro&#34; xe.licenseInfo.hasExpiredTrial = false xe.licenseInfo.isTrialAvailable = false xe.licenseInfo.hasValidLicense = true修改dotNet的代码 进入C:\Users\SwordSong\AppData\Local\Programs\Fiddler Everywhere\resources\app\out\WebServer
+使用 ildasm 将 FiddlerBackendSDK.dll转成 il
+定位到 FiddlerBackendSDK.User.UserClient::GetBestAccount
+删除 IL_000d – IL_0020 对应 if 语句
+删除 IL_003f – IL_0040 对应 return null; 语句
+定位到 &lt;&gt;c__DisplayClass18_0′::’b__0
+删除 IL_0000 – IL_0019 , 在 IL_001e 前插入 ldc." />
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="Fiddler Everything破解 3.2版本测试有效
+前言 Fiddler Everywhere 是一款跨平台的抓包软件。
+它由 Electron &#43; dotNet 编写而成。
+于是破解需要修改 Electron 与 dotNet 两部分。
+破解 修改 Electron 的js代码 进入\resources\app\out\WebServer\ClientApp\dist
+打开 main.xxxx.js 搜索 updateUserLicense ，在函数内部开头加入：
+xe.licenseInfo.currentLicense = &#34;Pro&#34; xe.licenseInfo.hasExpiredTrial = false xe.licenseInfo.isTrialAvailable = false xe.licenseInfo.hasValidLicense = true修改dotNet的代码 进入C:\Users\SwordSong\AppData\Local\Programs\Fiddler Everywhere\resources\app\out\WebServer
+使用 ildasm 将 FiddlerBackendSDK.dll转成 il
+定位到 FiddlerBackendSDK.User.UserClient::GetBestAccount
+删除 IL_000d – IL_0020 对应 if 语句
+删除 IL_003f – IL_0040 对应 return null; 语句
+定位到 &lt;&gt;c__DisplayClass18_0′::’b__0
+删除 IL_0000 – IL_0019 , 在 IL_001e 前插入 ldc.">
+  <meta itemprop="wordCount" content="131"><meta property="og:url" content="https://example.org/posts/fiddler-everywhere%E7%A0%B4%E8%A7%A3/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="Fiddler Everything破解 3.2版本测试有效
+前言 Fiddler Everywhere 是一款跨平台的抓包软件。
+它由 Electron &#43; dotNet 编写而成。
+于是破解需要修改 Electron 与 dotNet 两部分。
+破解 修改 Electron 的js代码 进入\resources\app\out\WebServer\ClientApp\dist
+打开 main.xxxx.js 搜索 updateUserLicense ，在函数内部开头加入：
+xe.licenseInfo.currentLicense = &#34;Pro&#34; xe.licenseInfo.hasExpiredTrial = false xe.licenseInfo.isTrialAvailable = false xe.licenseInfo.hasValidLicense = true修改dotNet的代码 进入C:\Users\SwordSong\AppData\Local\Programs\Fiddler Everywhere\resources\app\out\WebServer
+使用 ildasm 将 FiddlerBackendSDK.dll转成 il
+定位到 FiddlerBackendSDK.User.UserClient::GetBestAccount
+删除 IL_000d – IL_0020 对应 if 语句
+删除 IL_003f – IL_0040 对应 return null; 语句
+定位到 &lt;&gt;c__DisplayClass18_0′::’b__0
+删除 IL_0000 – IL_0019 , 在 IL_001e 前插入 ldc.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My New Hugo Site">
+  <meta name="twitter:description" content="Fiddler Everything破解 3.2版本测试有效
+前言 Fiddler Everywhere 是一款跨平台的抓包软件。
+它由 Electron &#43; dotNet 编写而成。
+于是破解需要修改 Electron 与 dotNet 两部分。
+破解 修改 Electron 的js代码 进入\resources\app\out\WebServer\ClientApp\dist
+打开 main.xxxx.js 搜索 updateUserLicense ，在函数内部开头加入：
+xe.licenseInfo.currentLicense = &#34;Pro&#34; xe.licenseInfo.hasExpiredTrial = false xe.licenseInfo.isTrialAvailable = false xe.licenseInfo.hasValidLicense = true修改dotNet的代码 进入C:\Users\SwordSong\AppData\Local\Programs\Fiddler Everywhere\resources\app\out\WebServer
+使用 ildasm 将 FiddlerBackendSDK.dll转成 il
+定位到 FiddlerBackendSDK.User.UserClient::GetBestAccount
+删除 IL_000d – IL_0020 对应 if 语句
+删除 IL_003f – IL_0040 对应 return null; 语句
+定位到 &lt;&gt;c__DisplayClass18_0′::’b__0
+删除 IL_0000 – IL_0019 , 在 IL_001e 前插入 ldc.">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://example.org/posts/fiddler-everywhere%E7%A0%B4%E8%A7%A3/" /><link rel="prev" href="https://example.org/posts/hs8145v5/" /><link rel="next" href="https://example.org/posts/cygwin/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "",
+    "inLanguage": "en-us",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/example.org\/posts\/fiddler-everywhere%E7%A0%B4%E8%A7%A3\/"
+    },"genre": "posts","wordcount":  131 ,
+    "url": "https:\/\/example.org\/posts\/fiddler-everywhere%E7%A0%B4%E8%A7%A3\/","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span></span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span></div><div class="post-meta-line"><span title="发布于 0001-01-01 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="0001-01-01">0001-01-01</time></span>&nbsp;<span title="131 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#破解">破解</a>
+      <ul>
+        <li><a href="#修改-electron-的js代码">修改 Electron 的js代码</a></li>
+        <li><a href="#修改dotnet的代码">修改dotNet的代码</a></li>
+        <li><a href="#代码对比">代码对比</a></li>
+        <li><a href="#最后">最后</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考链接">参考链接</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="fiddler-everything破解" class="heading-element"><span>Fiddler Everything破解</span>
+  <a href="#fiddler-everything%e7%a0%b4%e8%a7%a3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><p>3.2版本测试有效</p>
+<h2 id="前言" class="heading-element"><span>前言</span>
+  <a href="#%e5%89%8d%e8%a8%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Fiddler Everywhere 是一款跨平台的抓包软件。</p>
+<p>它由 Electron + dotNet 编写而成。</p>
+<p>于是破解需要修改 Electron 与 dotNet 两部分。</p>
+<h2 id="破解" class="heading-element"><span>破解</span>
+  <a href="#%e7%a0%b4%e8%a7%a3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="修改-electron-的js代码" class="heading-element"><span>修改 Electron 的js代码</span>
+  <a href="#%e4%bf%ae%e6%94%b9-electron-%e7%9a%84js%e4%bb%a3%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>进入<code>\resources\app\out\WebServer\ClientApp\dist</code></p>
+<p>打开 main.xxxx.js
+搜索 <code>updateUserLicense</code> ，在函数内部开头加入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#a6e22e">xe</span>.<span style="color:#a6e22e">licenseInfo</span>.<span style="color:#a6e22e">currentLicense</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Pro&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">xe</span>.<span style="color:#a6e22e">licenseInfo</span>.<span style="color:#a6e22e">hasExpiredTrial</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">xe</span>.<span style="color:#a6e22e">licenseInfo</span>.<span style="color:#a6e22e">isTrialAvailable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">xe</span>.<span style="color:#a6e22e">licenseInfo</span>.<span style="color:#a6e22e">hasValidLicense</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span></span></span></code></pre></div><h3 id="修改dotnet的代码" class="heading-element"><span>修改dotNet的代码</span>
+  <a href="#%e4%bf%ae%e6%94%b9dotnet%e7%9a%84%e4%bb%a3%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>进入<code>C:\Users\SwordSong\AppData\Local\Programs\Fiddler Everywhere\resources\app\out\WebServer</code></p>
+<ol>
+<li>
+<p>使用 ildasm 将 <code>FiddlerBackendSDK.dll</code>转成 il</p>
+</li>
+<li>
+<p>定位到 <code>FiddlerBackendSDK.User.UserClient::GetBestAccount</code></p>
+<p>删除 IL_000d – IL_0020 对应 if 语句</p>
+<p>删除 IL_003f – IL_0040 对应 <code>return null;</code> 语句</p>
+</li>
+<li>
+<p>定位到 &lt;&gt;c__DisplayClass18_0′::’b__0</p>
+<p>删除 IL_0000 – IL_0019 , 在 IL_001e 前插入 <code>ldc.i4.1</code></p>
+</li>
+</ol>
+<h3 id="代码对比" class="heading-element"><span>代码对比</span>
+  <a href="#%e4%bb%a3%e7%a0%81%e5%af%b9%e6%af%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>GetBestAccount：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> AccountDTO <span style="color:#a6e22e">GetBestAccount</span>(UserWithBestAccountDTO user)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	UserClient.<span style="color:#a6e22e">u003cu003ec__DisplayClass18_0</span> variable <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>user.<span style="color:#a6e22e">get_BestEverywhereAccountId</span>().<span style="color:#a6e22e">get_HasValue</span>())
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> Enumerable.<span style="color:#a6e22e">FirstOrDefault</span><span style="color:#f92672">&lt;</span>UserAccountDTO<span style="color:#f92672">&gt;</span>(user.<span style="color:#a6e22e">get_Accounts</span>(), <span style="color:#66d9ef">new</span> Func<span style="color:#f92672">&lt;</span>UserAccountDTO, bool<span style="color:#f92672">&gt;</span>(variable, (UserAccountDTO x) <span style="color:#f92672">=&gt;</span> x.<span style="color:#a6e22e">get_Id</span>() <span style="color:#f92672">==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">get_BestEverywhereAccountId</span>().<span style="color:#a6e22e">get_Value</span>()));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> AccountDTO <span style="color:#a6e22e">GetBestAccount</span>(UserWithBestAccountDTO user)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	UserClient.<span style="color:#a6e22e">u003cu003ec__DisplayClass18_0</span> variable <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> Enumerable.<span style="color:#a6e22e">FirstOrDefault</span><span style="color:#f92672">&lt;</span>UserAccountDTO<span style="color:#f92672">&gt;</span>(user.<span style="color:#a6e22e">get_Accounts</span>(), <span style="color:#66d9ef">new</span> Func<span style="color:#f92672">&lt;</span>UserAccountDTO, bool<span style="color:#f92672">&gt;</span>(variable, (UserAccountDTO x) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>));
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="最后" class="heading-element"><span>最后</span>
+  <a href="#%e6%9c%80%e5%90%8e" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>使用 ilasm 将 il 文件 转成 dll</p>
+<h2 id="参考链接" class="heading-element"><span>参考链接</span>
+  <a href="#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><a href="https://www.jysafe.cn/4785.air"target="_blank" rel="external nofollow noopener noreferrer">https://www.jysafe.cn/4785.air</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 0001-01-01 00:00:00">更新于 0001-01-01&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="https://example.org/posts/fiddler-everywhere%E7%A0%B4%E8%A7%A3/" data-title=""><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.org/posts/fiddler-everywhere%E7%A0%B4%E8%A7%A3/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.org/posts/fiddler-everywhere%E7%A0%B4%E8%A7%A3/" data-title=""><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/hs8145v5/" class="post-nav-item" rel="prev" title=""><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i></a>
+      <a href="/posts/cygwin/" class="post-nav-item" rel="next" title=""><i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.128.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.8"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.8"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

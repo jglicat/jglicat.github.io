@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en-us">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title> - My New Hugo Site</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="参考链接：设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 - 学长の生活志 (65.chat)
+设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 和强君 • 2021 年 03 月 12 日 • 阅读: 11873 • 记录 教程开始之前，先思考两个问题： 没有公网怎么办？ 解答：目前移动、联通、电信这三家运营商，以云南地区为例，三家都已经实现 百分之百 IPV6 公网，电信有 ipv4 公网，联通部分有 ipv4 公网，移动没有 ipv4 公网。
+如何查看自己有没有公网请自行百度。
+确定有公网，但是只能内网访问。 解答：把光猫改成桥接模式，进行路由器拨号，修改方式记住自己光猫相关参数，按照下图进行修改（记得替换相关值）。
+image.png 教程正式开始 路由器拨号上网 准备一个已经刷好 openwrt 的软路由，以 K3 为例，按照下图方式连接光猫的 LAN 与路由器的 WAN 即可，如果有多级可继续以相同方式进行串联。 image.png 启动路由器，输入 192.168.2.1（一级路由）登陆管理界面，依次网络 —— 接口 ——WAN—— 修改（如图所示） image.png 协议选择 PPPOE ，之后填入宽带账号密码，其他默认不用修改即可完成设置上网。 image.png 路由器开启 IPV6 如果有 IPV4 公网那直接申请域名做动态域名解析和端口转发即可。
+openwort 设置 ipv6 比较繁琐 需要先按照下图配置方式完成设置。
+在接口处根据需求选择已有接口或者新建接口，删除 IPV6 前缀 保存。 image." />
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="参考链接：设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 - 学长の生活志 (65.chat)
+设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 和强君 • 2021 年 03 月 12 日 • 阅读: 11873 • 记录 教程开始之前，先思考两个问题： 没有公网怎么办？ 解答：目前移动、联通、电信这三家运营商，以云南地区为例，三家都已经实现 百分之百 IPV6 公网，电信有 ipv4 公网，联通部分有 ipv4 公网，移动没有 ipv4 公网。
+如何查看自己有没有公网请自行百度。
+确定有公网，但是只能内网访问。 解答：把光猫改成桥接模式，进行路由器拨号，修改方式记住自己光猫相关参数，按照下图进行修改（记得替换相关值）。
+image.png 教程正式开始 路由器拨号上网 准备一个已经刷好 openwrt 的软路由，以 K3 为例，按照下图方式连接光猫的 LAN 与路由器的 WAN 即可，如果有多级可继续以相同方式进行串联。 image.png 启动路由器，输入 192.168.2.1（一级路由）登陆管理界面，依次网络 —— 接口 ——WAN—— 修改（如图所示） image.png 协议选择 PPPOE ，之后填入宽带账号密码，其他默认不用修改即可完成设置上网。 image.png 路由器开启 IPV6 如果有 IPV4 公网那直接申请域名做动态域名解析和端口转发即可。
+openwort 设置 ipv6 比较繁琐 需要先按照下图配置方式完成设置。
+在接口处根据需求选择已有接口或者新建接口，删除 IPV6 前缀 保存。 image.">
+  <meta itemprop="wordCount" content="595"><meta property="og:url" content="https://example.org/posts/ipv6%E7%9B%B8%E5%85%B3/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="参考链接：设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 - 学长の生活志 (65.chat)
+设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 和强君 • 2021 年 03 月 12 日 • 阅读: 11873 • 记录 教程开始之前，先思考两个问题： 没有公网怎么办？ 解答：目前移动、联通、电信这三家运营商，以云南地区为例，三家都已经实现 百分之百 IPV6 公网，电信有 ipv4 公网，联通部分有 ipv4 公网，移动没有 ipv4 公网。
+如何查看自己有没有公网请自行百度。
+确定有公网，但是只能内网访问。 解答：把光猫改成桥接模式，进行路由器拨号，修改方式记住自己光猫相关参数，按照下图进行修改（记得替换相关值）。
+image.png 教程正式开始 路由器拨号上网 准备一个已经刷好 openwrt 的软路由，以 K3 为例，按照下图方式连接光猫的 LAN 与路由器的 WAN 即可，如果有多级可继续以相同方式进行串联。 image.png 启动路由器，输入 192.168.2.1（一级路由）登陆管理界面，依次网络 —— 接口 ——WAN—— 修改（如图所示） image.png 协议选择 PPPOE ，之后填入宽带账号密码，其他默认不用修改即可完成设置上网。 image.png 路由器开启 IPV6 如果有 IPV4 公网那直接申请域名做动态域名解析和端口转发即可。
+openwort 设置 ipv6 比较繁琐 需要先按照下图配置方式完成设置。
+在接口处根据需求选择已有接口或者新建接口，删除 IPV6 前缀 保存。 image.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My New Hugo Site">
+  <meta name="twitter:description" content="参考链接：设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 - 学长の生活志 (65.chat)
+设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 和强君 • 2021 年 03 月 12 日 • 阅读: 11873 • 记录 教程开始之前，先思考两个问题： 没有公网怎么办？ 解答：目前移动、联通、电信这三家运营商，以云南地区为例，三家都已经实现 百分之百 IPV6 公网，电信有 ipv4 公网，联通部分有 ipv4 公网，移动没有 ipv4 公网。
+如何查看自己有没有公网请自行百度。
+确定有公网，但是只能内网访问。 解答：把光猫改成桥接模式，进行路由器拨号，修改方式记住自己光猫相关参数，按照下图进行修改（记得替换相关值）。
+image.png 教程正式开始 路由器拨号上网 准备一个已经刷好 openwrt 的软路由，以 K3 为例，按照下图方式连接光猫的 LAN 与路由器的 WAN 即可，如果有多级可继续以相同方式进行串联。 image.png 启动路由器，输入 192.168.2.1（一级路由）登陆管理界面，依次网络 —— 接口 ——WAN—— 修改（如图所示） image.png 协议选择 PPPOE ，之后填入宽带账号密码，其他默认不用修改即可完成设置上网。 image.png 路由器开启 IPV6 如果有 IPV4 公网那直接申请域名做动态域名解析和端口转发即可。
+openwort 设置 ipv6 比较繁琐 需要先按照下图配置方式完成设置。
+在接口处根据需求选择已有接口或者新建接口，删除 IPV6 前缀 保存。 image.">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://example.org/posts/ipv6%E7%9B%B8%E5%85%B3/" /><link rel="prev" href="https://example.org/posts/linux/" /><link rel="next" href="https://example.org/posts/hs8145v5/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "",
+    "inLanguage": "en-us",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/example.org\/posts\/ipv6%E7%9B%B8%E5%85%B3\/"
+    },"genre": "posts","wordcount":  595 ,
+    "url": "https:\/\/example.org\/posts\/ipv6%E7%9B%B8%E5%85%B3\/","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span></span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span></div><div class="post-meta-line"><span title="发布于 0001-01-01 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="0001-01-01">0001-01-01</time></span>&nbsp;<span title="595 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#和强君https65chatauthor1--2021-年-03-月-12-日--阅读-11873--记录https65chattoss"><a href="https://65.chat/author/1/">和强君</a> • 2021 年 03 月 12 日 • 阅读: 11873 • <a href="https://65.chat/toss/">记录</a></a>
+      <ul>
+        <li><a href="#教程开始之前先思考两个问题"><strong>教程开始之前，先思考两个问题：</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#路由器拨号上网"><strong>路由器拨号上网</strong></a></li>
+        <li><a href="#路由器开启-ipv6"><strong>路由器开启 IPV6</strong></a></li>
+        <li><a href="#外网设置-ipv6">外网设置 IPV6</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><a href="https://65.chat/toss/71.html"target="_blank" rel="external nofollow noopener noreferrer">参考链接：设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程 - 学长の生活志 (65.chat)</a></p>
+<h1 id="设置openwrt软路由通过ipv6外网访问家中电脑nas等设备系列教程" class="heading-element"><span>设置openwrt软路由，通过ipv6外网访问家中电脑nas等设备系列教程</span>
+  <a href="#%e8%ae%be%e7%bd%aeopenwrt%e8%bd%af%e8%b7%af%e7%94%b1%e9%80%9a%e8%bf%87ipv6%e5%a4%96%e7%bd%91%e8%ae%bf%e9%97%ae%e5%ae%b6%e4%b8%ad%e7%94%b5%e8%84%91nas%e7%ad%89%e8%ae%be%e5%a4%87%e7%b3%bb%e5%88%97%e6%95%99%e7%a8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h2 id="和强君https65chatauthor1--2021-年-03-月-12-日--阅读-11873--记录https65chattoss" class="heading-element"><span><a href="https://65.chat/author/1/"target="_blank" rel="external nofollow noopener noreferrer">和强君</a> • 2021 年 03 月 12 日 • 阅读: 11873 • <a href="https://65.chat/toss/"target="_blank" rel="external nofollow noopener noreferrer">记录</a></span>
+  <a href="#%e5%92%8c%e5%bc%ba%e5%90%9bhttps65chatauthor1--2021-%e5%b9%b4-03-%e6%9c%88-12-%e6%97%a5--%e9%98%85%e8%af%bb-11873--%e8%ae%b0%e5%bd%95https65chattoss" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="教程开始之前先思考两个问题" class="heading-element"><span><strong>教程开始之前，先思考两个问题：</strong></span>
+  <a href="#%e6%95%99%e7%a8%8b%e5%bc%80%e5%a7%8b%e4%b9%8b%e5%89%8d%e5%85%88%e6%80%9d%e8%80%83%e4%b8%a4%e4%b8%aa%e9%97%ae%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><strong>没有公网怎么办？</strong></li>
+</ul>
+<p>解答：目前移动、联通、电信这三家<a href="https://65.chat/operate/" title="运营"target="_blank" rel="external nofollow noopener noreferrer">运营</a>商，以云南地区为例，三家都已经实现 百分之百 IPV6 <a href="https://65.chat/tag/%E5%85%AC%E7%BD%91/" title="公网"target="_blank" rel="external nofollow noopener noreferrer">公网</a>，电信有 ipv4 <a href="https://65.chat/tag/%E5%85%AC%E7%BD%91/" title="公网"target="_blank" rel="external nofollow noopener noreferrer">公网</a>，联通部分有 ipv4 <a href="https://65.chat/tag/%E5%85%AC%E7%BD%91/" title="公网"target="_blank" rel="external nofollow noopener noreferrer">公网</a>，移动没有 ipv4 <a href="https://65.chat/tag/%E5%85%AC%E7%BD%91/" title="公网"target="_blank" rel="external nofollow noopener noreferrer">公网</a>。</p>
+<p>如何查看自己有没有<a href="https://65.chat/tag/%E5%85%AC%E7%BD%91/" title="公网"target="_blank" rel="external nofollow noopener noreferrer">公网</a>请自行百度。</p>
+<ul>
+<li><strong>确定有公网，但是只能内网访问。</strong></li>
+</ul>
+<p>解答：把光猫改成桥接模式，进行路由器拨号，修改方式记住自己光猫相关参数，按照下图进行修改（记得替换相关值）。</p>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/3586096122.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/3586096122.png?size=small, https://65.chat/usr/uploads/2021/03/3586096122.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/3586096122.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<h1 id="教程正式开始" class="heading-element"><span>教程正式开始</span>
+  <a href="#%e6%95%99%e7%a8%8b%e6%ad%a3%e5%bc%8f%e5%bc%80%e5%a7%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h3 id="路由器拨号上网" class="heading-element"><span><strong>路由器拨号上网</strong></span>
+  <a href="#%e8%b7%af%e7%94%b1%e5%99%a8%e6%8b%a8%e5%8f%b7%e4%b8%8a%e7%bd%91" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>准备一个已经刷好 <a href="https://65.chat/tag/openwrt/" title="openwrt"target="_blank" rel="external nofollow noopener noreferrer">openwrt</a> 的软路由，以 K3 为例，按照下图方式连接光猫的 LAN 与路由器的 WAN 即可，如果有多级可继续以相同方式进行串联。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/3626658225.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/3626658225.png?size=small, https://65.chat/usr/uploads/2021/03/3626658225.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/3626658225.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<ul>
+<li>启动路由器，输入 192.168.2.1（一级路由）登陆管理界面，依次网络 —— 接口 ——WAN—— 修改（如图所示）</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/3674710323.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/3674710323.png?size=small, https://65.chat/usr/uploads/2021/03/3674710323.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/3674710323.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<ul>
+<li>协议选择 PPPOE ，之后填入宽带账号密码，其他默认不用修改即可完成设置上网。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/836582041.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/836582041.png?size=small, https://65.chat/usr/uploads/2021/03/836582041.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/836582041.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<h3 id="路由器开启-ipv6" class="heading-element"><span><strong>路由器开启 IPV6</strong></span>
+  <a href="#%e8%b7%af%e7%94%b1%e5%99%a8%e5%bc%80%e5%90%af-ipv6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>如果有 IPV4 <a href="https://65.chat/tag/%E5%85%AC%E7%BD%91/" title="公网"target="_blank" rel="external nofollow noopener noreferrer">公网</a>那直接申请域名做动态域名解析和端口转发即可。</p>
+<p>openwort 设置 <a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 比较繁琐 需要先按照下图配置方式完成设置。</p>
+<ul>
+<li>在接口处根据需求选择已有接口或者新建接口，删除 IPV6 前缀 保存。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/2163790520.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/2163790520.png?size=small, https://65.chat/usr/uploads/2021/03/2163790520.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/2163790520.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/1621338926.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/1621338926.png?size=small, https://65.chat/usr/uploads/2021/03/1621338926.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/1621338926.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<ul>
+<li>选择需要设置的 IPV6 接口 —— 高级设置 —— 地址选择自动。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/3024584929.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/3024584929.png?size=small, https://65.chat/usr/uploads/2021/03/3024584929.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/3024584929.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<ul>
+<li>网络 ——DHCP/DNS—— 高级设置静止解析去掉 —— 保存应用。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/3992904763.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/3992904763.png?size=small, https://65.chat/usr/uploads/2021/03/3992904763.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/3992904763.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<ul>
+<li>网络 —— 防火墙如图 2345 设置保存应用。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/3768945224.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/3768945224.png?size=small, https://65.chat/usr/uploads/2021/03/3768945224.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/3768945224.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<ul>
+<li>最后一步网络 —— 负载均衡 —— 策略 —— 改成默认保存即可。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/1912518098.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/1912518098.png?size=small, https://65.chat/usr/uploads/2021/03/1912518098.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/1912518098.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<ul>
+<li>打开网站<a href="http://www.test-ipv6.com/"target="_blank" rel="external nofollow noopener noreferrer"> http://www.test-ipv6.com/</a> 如图所示显示说明已经正确获取到<a href="https://65.chat/tag/%E5%85%AC%E7%BD%91/" title="公网"target="_blank" rel="external nofollow noopener noreferrer">公网</a> IPV6。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/2900917412.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/2900917412.png?size=small, https://65.chat/usr/uploads/2021/03/2900917412.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/2900917412.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<ul>
+<li>此时路由器下的所有设备已经获取获取到 IPV6 真实地址，通过电脑指令 ping 已经能够正常联通。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/2170535817.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/2170535817.png?size=small, https://65.chat/usr/uploads/2021/03/2170535817.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/2170535817.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<h3 id="外网设置-ipv6" class="heading-element"><span>外网设置 IPV6</span>
+  <a href="#%e5%a4%96%e7%bd%91%e8%ae%be%e7%bd%ae-ipv6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>这是最后一步也是最难设置的一步，开始之前需要详细了解 IPV6 的构成和原理。</p>
+<ul>
+<li>
+<p><strong>使用无状态的 eui64 地址</strong> , 它的后缀是不变的。</p>
+</li>
+<li>
+<p>内网设备的 <a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 地址，前半部分是 <a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 前缀，是<a href="https://65.chat/operate/" title="运营"target="_blank" rel="external nofollow noopener noreferrer">运营</a>商分配的。重拨后会变化。后半部分，如果不是 eui64，就是随机生成的，也会变。如果是 eui64，则与 mac 地址相关，不会变化，除非换网卡。</p>
+</li>
+<li>
+<p>如果整个 <a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 都会变，防火墙规则就没办法写了。除非全网放行 (内网目标地址掩码填 <code>::/0</code> 或 <code>any</code>)。或关闭防火墙。(本次教程是 eui64）</p>
+</li>
+<li>
+<p>所以配置内网设备的 <a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 地址为 eui64，防火墙的内网目标地址掩码填 <code>::xxxx:xxxx:xxxx:xxxx/::FFFF:FFFF:FFFF:FFFF</code>, 这样就比较安全了。
+(<a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 地址掩码比 v4 灵活，v6 可以掩前面，也可以掩后面。v4 就只能掩前面)</p>
+</li>
+<li>
+<p><strong>还有一个 ipv6 地址可以使用</strong> (有状态地址), 即 dhcpdv6 分配的地址。每台客户机都会自己提供一个 DUID, 且不会变，分配的 <a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 后缀也就不变，相对固定。
+(结论：不能指定。) 在 <a href="https://65.chat/tag/openwrt/" title="openwrt"target="_blank" rel="external nofollow noopener noreferrer">openwrt</a> 中 <code>Network</code>-&gt;<code>DHCP and DNS</code>-&gt;<code>Static Leases(静态地址)</code> 中，(<a href="https://65.chat/tag/openwrt/" title="openwrt"target="_blank" rel="external nofollow noopener noreferrer">openwrt</a> <strong>不支持</strong>直接指定新的 <a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 后缀 / 或指定 DUID。除非客户机自己没有提供 DUID)</p>
+<p>添加一条<a href="https://65.chat/toss/" title="记录"target="_blank" rel="external nofollow noopener noreferrer">记录</a>，指定 <code>MAC-Address</code>，指定 <code>IPv6-Suffix</code>(格式为四个 hex 数，如 AABB)，这个办法<strong>不能指定</strong> <a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 后缀。</p>
+<p>添加一条<a href="https://65.chat/toss/" title="记录"target="_blank" rel="external nofollow noopener noreferrer">记录</a>，指定 <code>MAC-Address</code>，指定 <code>DUID</code>，重启客户机。看看拿到什么 IP。这个办法也<strong>不能指定</strong> DUID，不能得到新 <a href="https://65.chat/tag/ipv6/" title="ipv6"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a> 后缀。</p>
+<p>修改客户机的 DUID ，看 [<a href="https://www.cnblogs.com/osnosn/p/11396868.html"target="_blank" rel="external nofollow noopener noreferrer">Linux ipv6 无状态 设置为 eui64</a>] 中 “有状态 ipv6” 部分。指定新的 DUID，就有一个新的固定的 IPv6 后缀。</p>
+</li>
+<li>
+<p>确定客户机的 ipv6 后缀之后。比如 <code>2408:ebcd:ebcd:ebcd::789</code>, 那么防火墙规则中的目标地址写 <code>::789/::ffff:ffff:ffff:ffff</code></p>
+</li>
+</ul>
+<blockquote>
+<p>比如：你的 ipv6 地址为，2408:ebcd:ebcd:ebcd:5678:5678:5678:5678
+则目标地址掩码填， 0:0:0:0:5678:5678:5678:5678/0:0:0:0:FFFF:FFFF:FFFF:FFFF
+连续的 0 简写为两个冒号，即，::5678:5678:5678:5678/::FFFF:FFFF:FFFF:FFFF</p>
+</blockquote>
+<h4 id="在接口--防火墙--流量规则--新增-forward-规则" class="heading-element"><span><strong>在接口 —— 防火墙 —— 流量规则 —— 新增 forward 规则</strong></span>
+  <a href="#%e5%9c%a8%e6%8e%a5%e5%8f%a3--%e9%98%b2%e7%81%ab%e5%a2%99--%e6%b5%81%e9%87%8f%e8%a7%84%e5%88%99--%e6%96%b0%e5%a2%9e-forward-%e8%a7%84%e5%88%99" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>如图所示填写</p>
+<ul>
+<li>协议族选择 <code>ipv6 only</code></li>
+<li>协议按需 <code>TCP</code>, <code>UDP</code>, <code>TCP/UDP</code> &hellip;</li>
+<li>Source zone 选 WAN (包含 wan6)</li>
+<li>Destination Zone (目标区域)，选择 <code>Any zone(forward)</code> 或者 <code>lan</code></li>
+<li>目标端口，按需填写。多个端口用空格隔开。</li>
+</ul>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/954286686.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/954286686.png?size=small, https://65.chat/usr/uploads/2021/03/954286686.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/954286686.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<ul>
+<li>这个图片中的设置，本质上就是添加了多条 forward 规则 (tcp/udp/ 一个端口，各一条)(<a href="https://65.chat/tag/openwrt/" title="openwrt"target="_blank" rel="external nofollow noopener noreferrer">openwrt</a>-18.06)。
+<ul>
+<li>如果选 <code>Any zone(forward)</code>
+<code>ip6tables -A FORWARD -i pppoe-wan -d ::5678:5678:5678/::ffff:ffff:ffff:ffff -p tcp -m tcp --dport 443 -j ACCEPT</code>
+<code>ip6tables -A FORWARD -i pppoe-wan -d ::5678:5678:5678/::ffff:ffff:ffff:ffff -p udp -m udp --dport 443 -j ACCEPT</code></li>
+<li>如果选 <code>lan</code>
+<code>ip6tables -A FORWARD -i pppoe-wan -o br-lan -d ::5678:5678:5678/::ffff:ffff:ffff:ffff -p tcp -m tcp --dport 443 -j ACCEPT</code></li>
+<li><code>Device (input)</code> 不是用来开放内网机器访问的。是用来开放路由器本身的端口访问，这时候 Destination address (目标地址) 要留空，或写路由器自己的 IP。
+<code>ip6tables -A INPUT -i pppoe-wan -p tcp -m tcp --dport 443 -j ACCEPT</code></li>
+</ul>
+</li>
+<li>另外，现在的<a href="https://65.chat/operate/" title="运营"target="_blank" rel="external nofollow noopener noreferrer">运营</a>商<strong>已经封禁 80,443</strong> 两个端口 (ipv4 和 ipv6)。所以这两个端口开放了也用不了。其他端口可以用。</li>
+</ul>
+<h4 id="防火墙中的默认规则-dropreject" class="heading-element"><span><strong>防火墙中的默认规则 drop/reject</strong></span>
+  <a href="#%e9%98%b2%e7%81%ab%e5%a2%99%e4%b8%ad%e7%9a%84%e9%bb%98%e8%ae%a4%e8%a7%84%e5%88%99-dropreject" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Network -&gt; Firewall -&gt; General Settings 中:* General Settings 的 Forward 默认规则改为 drop， 影响从外网访问内网 lan, 不开放的 ipv6 地址和端口。
+修改的是 <code>iptables/ip6tables</code> 的 filter-&gt;FORWARD 的最后一条
+<code>-A FORWARD -j DROP</code></p>
+<ul>
+<li>Zones 的 WAN =&gt; [&ndash;] 的 Input 默认规则改为 drop，影响从外网访问路由器本身的 wan (ipv4/6),lan (ipv6) 地址，不开放的端口。不影响端口映射。
+修改的是 <code>iptables/ip6tables</code> 的 filter-&gt;INPUT 的最后一条
+<code>-A INPUT -i pppoe-wan -j DROP</code>,
+<code>-A INPUT -i vwan1 -j DROP</code></li>
+<li>Zones 的 WAN =&gt; [&ndash;] 的 Forward 默认规则改为 drop，影响从外网访问非 lan (包括 wan, 未设置为 lan 的其他接口), 不开放的地址和端口。
+修改的是 <code>iptables/ip6tables</code> 的 filter-&gt;FORWARD 的倒数第二条
+<code>-A FORWARD -i pppoe-wan -j zone_wan_dest_DROP</code>,
+<code>-A FORWARD -i vwan1 -j zone_wan_dest_DROP</code>,
+<code>-A zone_wan_dest_DROP -o pppoe-wan -j DROP</code>,
+<code>-A zone_wan_dest_DROP -o vwan1 -j DROP</code></li>
+</ul>
+<p>具体参考图片</p>
+<p><figure><img loading="lazy" src="https://65.chat/usr/uploads/2021/03/384273838.png" alt="image.png" srcset="https://65.chat/usr/uploads/2021/03/384273838.png?size=small, https://65.chat/usr/uploads/2021/03/384273838.png?size=medium 1.5x, https://65.chat/usr/uploads/2021/03/384273838.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><figcaption class="image-caption">image.png</figcaption>
+  </figure></p>
+<p>点击保存应用。</p>
+<p>现在设备已经整个暴露在互联网状态下，通过设置域名解析即可通过网址访问访问此设置。</p>
+<p><strong>ipv6 已经是公网地址，无需 nat 转换 / 端口映射，只需转发即可。</strong></p>
+<p>教程到此结束，因为 IPV6 和 IPV4 一样，地址每天都会重置，且不一样，为了省去手动解析的不必要麻烦，以路由器下的 <a href="https://65.chat/tag/NAS/" title="NAS"target="_blank" rel="external nofollow noopener noreferrer">NAS</a> <a href="https://65.chat/tag/%E5%A8%81%E8%81%94%E9%80%9A/" title="威联通"target="_blank" rel="external nofollow noopener noreferrer">威联通</a>为例，通过阿里云的 DDNS 自动解析设备地址到域名方便快捷，教程请点击这里 → <a href="https://65.chat/toss/72.html"target="_blank" rel="external nofollow noopener noreferrer">《威联通设置阿里云动态解析进行外网 IPV6 访问家中 NAS》</a></p>
+<p><a href="https://65.chat/tag/ipv6/"target="_blank" rel="external nofollow noopener noreferrer">ipv6</a><a href="https://65.chat/tag/%E5%85%AC%E7%BD%91/"target="_blank" rel="external nofollow noopener noreferrer">公网</a><a href="https://65.chat/tag/openwrt/"target="_blank" rel="external nofollow noopener noreferrer">openwrt</a><a href="https://65.chat/tag/%E5%85%89%E7%8C%AB%E6%A1%A5%E6%8E%A5/"target="_blank" rel="external nofollow noopener noreferrer">光猫桥接</a></p>
+<p><a href="https://65.chat/archives.html"target="_blank" rel="external nofollow noopener noreferrer">返回文章列表</a> <a href="">打赏</a></p>
+<p><img loading="lazy" src="https://65.chat/toss/71.html" alt="本页链接的二维码" srcset="https://65.chat/toss/71.html?size=small, https://65.chat/toss/71.html?size=medium 1.5x, https://65.chat/toss/71.html?size=large 2x" data-title="本页链接的二维码" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="https://65.chat/usr/uploads/2021/01/wx.jpg" alt="打赏二维码" srcset="https://65.chat/usr/uploads/2021/01/wx.jpg?size=small, https://65.chat/usr/uploads/2021/01/wx.jpg?size=medium 1.5x, https://65.chat/usr/uploads/2021/01/wx.jpg?size=large 2x" data-title="打赏二维码" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><a href="https://65.chat/toss/72.html" title="威联通设置阿里云动态域名解析进行外网 IPV6 访问家中 NAS"target="_blank" rel="external nofollow noopener noreferrer">下一篇:威联通设置阿里云动态域名解析进行外网 IPV6 访问家中 NAS</a><a href="https://65.chat/toss/93.html" title="配置frps和frpc服务端以及客户端内网穿透进行远程访问"target="_blank" rel="external nofollow noopener noreferrer">上一篇:配置frps和frpc服务端以及客户端内网穿透进行远程访问</a></p>
+<p>添加新评论</p>
+<p>[ ] [ ] [ ]</p>
+<p>OωO</p>
+<p>[ ]</p>
+<p><strong>已有 10 条评论</strong></p>
+<ol>
+<li>
+<p><img loading="lazy" src="https://secure.gravatar.com/avatar/638b0167e1a513fd5f0530beedc7cdf0?s=100&amp;r=G&amp;d=" alt="老王" srcset="https://secure.gravatar.com/avatar/638b0167e1a513fd5f0530beedc7cdf0?s=100&amp;r=G&amp;d=&amp;size=small, https://secure.gravatar.com/avatar/638b0167e1a513fd5f0530beedc7cdf0?s=100&amp;r=G&amp;d=&amp;size=medium 1.5x, https://secure.gravatar.com/avatar/638b0167e1a513fd5f0530beedc7cdf0?s=100&amp;r=G&amp;d=&amp;size=large 2x" data-title="老王" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>老王
+<a href="https://65.chat/toss/71.html?replyTo=2#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-2"target="_blank" rel="external nofollow noopener noreferrer">10 个月前</a>
+好像还是不行哦</p>
+<ol>
+<li><img loading="lazy" src="https://thirdqq.qlogo.cn/g?b=sdk&amp;k=eIibGmKyjYBhkicibvwFE8yHw&amp;s=100&amp;t=1655511865" alt="和强君" srcset="https://thirdqq.qlogo.cn/g?b=sdk&amp;k=eIibGmKyjYBhkicibvwFE8yHw&amp;s=100&amp;t=1655511865&amp;size=small, https://thirdqq.qlogo.cn/g?b=sdk&amp;k=eIibGmKyjYBhkicibvwFE8yHw&amp;s=100&amp;t=1655511865&amp;size=medium 1.5x, https://thirdqq.qlogo.cn/g?b=sdk&amp;k=eIibGmKyjYBhkicibvwFE8yHw&amp;s=100&amp;t=1655511865&amp;size=large 2x" data-title="和强君" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><a href="https://65.chat/"target="_blank" rel="external nofollow noopener noreferrer">和强君</a>
+<a href="https://65.chat/toss/71.html?replyTo=3#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-3"target="_blank" rel="external nofollow noopener noreferrer">9 个月前</a>
+<strong>@老王</strong>推倒从来屡试不爽</li>
+</ol>
+</li>
+<li>
+<p><img loading="lazy" src="https://secure.gravatar.com/avatar/e4a0153a12a5c2f3ab0870cf01ae88d7?s=100&amp;r=G&amp;d=" alt="小二哥" srcset="https://secure.gravatar.com/avatar/e4a0153a12a5c2f3ab0870cf01ae88d7?s=100&amp;r=G&amp;d=&amp;size=small, https://secure.gravatar.com/avatar/e4a0153a12a5c2f3ab0870cf01ae88d7?s=100&amp;r=G&amp;d=&amp;size=medium 1.5x, https://secure.gravatar.com/avatar/e4a0153a12a5c2f3ab0870cf01ae88d7?s=100&amp;r=G&amp;d=&amp;size=large 2x" data-title="小二哥" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>小二哥
+<a href="https://65.chat/toss/71.html?replyTo=4#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-4"target="_blank" rel="external nofollow noopener noreferrer">8 个月前</a>
+不行 <img loading="lazy" src="https://65.chat/usr/plugins/Mirages/biaoqing/paopao/E9BB91E7BABF.png" alt="https://65.chat/usr/plugins/Mirages/biaoqing/paopao/E9BB91E7BABF.png" srcset="https://65.chat/usr/plugins/Mirages/biaoqing/paopao/E9BB91E7BABF.png?size=small, https://65.chat/usr/plugins/Mirages/biaoqing/paopao/E9BB91E7BABF.png?size=medium 1.5x, https://65.chat/usr/plugins/Mirages/biaoqing/paopao/E9BB91E7BABF.png?size=large 2x" data-title="https://65.chat/usr/plugins/Mirages/biaoqing/paopao/E9BB91E7BABF.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+</li>
+<li>
+<p><img loading="lazy" src="https://secure.gravatar.com/avatar/f26c95265b257b9aff0a07265daa2fef?s=100&amp;r=G&amp;d=" alt="xhqpp" srcset="https://secure.gravatar.com/avatar/f26c95265b257b9aff0a07265daa2fef?s=100&amp;r=G&amp;d=&amp;size=small, https://secure.gravatar.com/avatar/f26c95265b257b9aff0a07265daa2fef?s=100&amp;r=G&amp;d=&amp;size=medium 1.5x, https://secure.gravatar.com/avatar/f26c95265b257b9aff0a07265daa2fef?s=100&amp;r=G&amp;d=&amp;size=large 2x" data-title="xhqpp" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>xhqpp
+<a href="https://65.chat/toss/71.html?replyTo=5#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-5"target="_blank" rel="external nofollow noopener noreferrer">7 个月前</a>
+能不能把 ipv6 的 80 端口映射成非 80 端口？80 被运营商封了</p>
+<ol>
+<li><img loading="lazy" src="https://secure.gravatar.com/avatar/39cc87f49714da3c63e95bef73314306?s=100&amp;r=G&amp;d=" alt="VK" srcset="https://secure.gravatar.com/avatar/39cc87f49714da3c63e95bef73314306?s=100&amp;r=G&amp;d=&amp;size=small, https://secure.gravatar.com/avatar/39cc87f49714da3c63e95bef73314306?s=100&amp;r=G&amp;d=&amp;size=medium 1.5x, https://secure.gravatar.com/avatar/39cc87f49714da3c63e95bef73314306?s=100&amp;r=G&amp;d=&amp;size=large 2x" data-title="VK" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>VK
+<a href="https://65.chat/toss/71.html?replyTo=6#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-6"target="_blank" rel="external nofollow noopener noreferrer">5 个月前</a>
+<strong>@xhqpp</strong>Socat Port Forword</li>
+</ol>
+</li>
+<li>
+<p><img loading="lazy" src="https://secure.gravatar.com/avatar/39cc87f49714da3c63e95bef73314306?s=100&amp;r=G&amp;d=" alt="VK" srcset="https://secure.gravatar.com/avatar/39cc87f49714da3c63e95bef73314306?s=100&amp;r=G&amp;d=&amp;size=small, https://secure.gravatar.com/avatar/39cc87f49714da3c63e95bef73314306?s=100&amp;r=G&amp;d=&amp;size=medium 1.5x, https://secure.gravatar.com/avatar/39cc87f49714da3c63e95bef73314306?s=100&amp;r=G&amp;d=&amp;size=large 2x" data-title="VK" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>VK
+<a href="https://65.chat/toss/71.html?replyTo=7#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-7"target="_blank" rel="external nofollow noopener noreferrer">5 个月前</a>
+一直用的老思路主路由 ipv6 socat forword 到 Nas ipv4。
+看了自己试了下，还是直接透到公网更好，ipv6 真香。</p>
+</li>
+<li>
+<p><img loading="lazy" src="https://secure.gravatar.com/avatar/24f1e9f1aef349e6d4420b1ac682a7f6?s=100&amp;r=G&amp;d=" alt="没有字的回音" srcset="https://secure.gravatar.com/avatar/24f1e9f1aef349e6d4420b1ac682a7f6?s=100&amp;r=G&amp;d=&amp;size=small, https://secure.gravatar.com/avatar/24f1e9f1aef349e6d4420b1ac682a7f6?s=100&amp;r=G&amp;d=&amp;size=medium 1.5x, https://secure.gravatar.com/avatar/24f1e9f1aef349e6d4420b1ac682a7f6?s=100&amp;r=G&amp;d=&amp;size=large 2x" data-title="没有字的回音" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><a href="https://echo.moe/"target="_blank" rel="external nofollow noopener noreferrer">没有字的回音</a>
+<a href="https://65.chat/toss/71.html?replyTo=8#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-8"target="_blank" rel="external nofollow noopener noreferrer">5 个月前</a>
+作者你好，我的 OpenWRT 21.02.2 的防火墙里，可以直接在 advanced-&gt;Source MAC address 这里指定 MAC 地址，这样就不用操作 IPv6 地址了，你要不再看看？</p>
+<ol>
+<li><img loading="lazy" src="https://thirdqq.qlogo.cn/g?b=sdk&amp;k=eIibGmKyjYBhkicibvwFE8yHw&amp;s=100&amp;t=1655511865" alt="和强君" srcset="https://thirdqq.qlogo.cn/g?b=sdk&amp;k=eIibGmKyjYBhkicibvwFE8yHw&amp;s=100&amp;t=1655511865&amp;size=small, https://thirdqq.qlogo.cn/g?b=sdk&amp;k=eIibGmKyjYBhkicibvwFE8yHw&amp;s=100&amp;t=1655511865&amp;size=medium 1.5x, https://thirdqq.qlogo.cn/g?b=sdk&amp;k=eIibGmKyjYBhkicibvwFE8yHw&amp;s=100&amp;t=1655511865&amp;size=large 2x" data-title="和强君" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><a href="https://65.chat/"target="_blank" rel="external nofollow noopener noreferrer">和强君</a>
+<a href="https://65.chat/toss/71.html?replyTo=9#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-9"target="_blank" rel="external nofollow noopener noreferrer">5 个月前</a>
+<strong>@没有字的回音</strong>那也可以，只要达到穿透目的就可以了</li>
+<li><img loading="lazy" src="https://secure.gravatar.com/avatar/24f1e9f1aef349e6d4420b1ac682a7f6?s=100&amp;r=G&amp;d=" alt="没有字的回音" srcset="https://secure.gravatar.com/avatar/24f1e9f1aef349e6d4420b1ac682a7f6?s=100&amp;r=G&amp;d=&amp;size=small, https://secure.gravatar.com/avatar/24f1e9f1aef349e6d4420b1ac682a7f6?s=100&amp;r=G&amp;d=&amp;size=medium 1.5x, https://secure.gravatar.com/avatar/24f1e9f1aef349e6d4420b1ac682a7f6?s=100&amp;r=G&amp;d=&amp;size=large 2x" data-title="没有字的回音" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><a href="https://echo.moe/"target="_blank" rel="external nofollow noopener noreferrer">没有字的回音</a>
+<a href="https://65.chat/toss/71.html?replyTo=10#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-10"target="_blank" rel="external nofollow noopener noreferrer">5 个月前</a>
+<strong>@和强君</strong>我发现这个规则并不可以，因为不是 destination MAC address，也不知道当初怎么缺心眼就以为可以了（捂脸</li>
+</ol>
+</li>
+<li>
+<p><img loading="lazy" src="https://secure.gravatar.com/avatar/bb20d47ae48f3064de115456f08fdfec?s=100&amp;r=G&amp;d=" alt="kiddytop" srcset="https://secure.gravatar.com/avatar/bb20d47ae48f3064de115456f08fdfec?s=100&amp;r=G&amp;d=&amp;size=small, https://secure.gravatar.com/avatar/bb20d47ae48f3064de115456f08fdfec?s=100&amp;r=G&amp;d=&amp;size=medium 1.5x, https://secure.gravatar.com/avatar/bb20d47ae48f3064de115456f08fdfec?s=100&amp;r=G&amp;d=&amp;size=large 2x" data-title="kiddytop" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>kiddytop
+<a href="https://65.chat/toss/71.html?replyTo=11#respond-post-71"target="_blank" rel="external nofollow noopener noreferrer">回复</a>
+<a href="https://65.chat/toss/71.html#comment-11"target="_blank" rel="external nofollow noopener noreferrer">3 个月前</a>
+博主：
+IPV6 如果只开放特定端口到设备，意思是有两步对吧，比如开放 5000 端口：
+1、开放 5000 端口到路由器，就是 INPUT 项；
+2、添加转发规则，5000 端口由 WAN 转发到设备，就是 forward 项</p>
+</li>
+</ol>
+<p>Copyright © 2022 <a href="https://65.chat/"target="_blank" rel="external nofollow noopener noreferrer">学长の生活志</a></p>
+<p><a href="http://beian.miit.gov.cn/"target="_blank" rel="external nofollow noopener noreferrer">滇ICP备2020009854号</a> • Powered by <a href="http://typecho.org/"target="_blank" rel="external nofollow noopener noreferrer">Typecho</a> • Theme <a href="https://get233.com/archives/mirages-intro.html"target="_blank" rel="external nofollow noopener noreferrer">Mirages</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 0001-01-01 00:00:00">更新于 0001-01-01&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="https://example.org/posts/ipv6%E7%9B%B8%E5%85%B3/" data-title=""><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.org/posts/ipv6%E7%9B%B8%E5%85%B3/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.org/posts/ipv6%E7%9B%B8%E5%85%B3/" data-title=""><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/linux/" class="post-nav-item" rel="prev" title=""><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i></a>
+      <a href="/posts/hs8145v5/" class="post-nav-item" rel="next" title=""><i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.128.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.8"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.8"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
